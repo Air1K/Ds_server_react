@@ -2,6 +2,8 @@ import React from "react";
 import HeadMenu from "./jsx_post/headMenu"
 import Sneg from "./jsx_post/sneg"
 import Cursor_aura from "./jsx_post/Cursor_aura"
+import Logojs from "./jsx_post/Logojs"
+
 import './css/Style-index.css';
 import './css/Styles.css'
 function getRandomInt(max) {
@@ -21,7 +23,7 @@ function App() {
         <HeadMenu />
         <Sneg />
         <Cursor_aura />
-        
+        <Logojs />
     </div>
   );
 }

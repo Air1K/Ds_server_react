@@ -1,20 +1,17 @@
 import React from 'react';
 import $ from 'jquery';
 
-var cursor = document.querySelector(".cursor");
-var aura = document.querySelector(".aura");
-
-cursor.classList.add('hiden');
-aura.classList.add('hiden');
+window.addEventListener('load', function() {
+    var cursor = document.querySelector("#cursor");
+    var aura = document.querySelector("#aura");
 
 let X_aura = 0;
 let Y_aura = 0; 
 let vertical_position = 0, client_X = 0, client_Y = 0 ;
 
-window.addEventListener("mousemove", function(e){
-	if($(".switch-btn").hasClass("switch-on")){
 
-	
+document.addEventListener("mousemove", function(e){
+	if($(".switch-btn").hasClass("switch-on")){
 	client_X = e.clientX;
 	client_Y = e.clientY;
 	X_aura += Math.round((client_X-X_aura) / 3);
@@ -36,11 +33,13 @@ function style_css_(){
 	aura.style.cssText = "left: "+((X_aura-20-14)) + "px; top: "+(Y_aura-20-14)+"px;";
 }
 
+});
+
 const Cursor_aura = () => {
     return (
         <div>
-            <div id="cursor" className="cursor"></div>
-            <div id="aura" className="aura"></div>
+            <div id="cursor" className="cursor hiden"></div>
+            <div id="aura" className="aura hiden"></div>
         </div>
     );
 };
