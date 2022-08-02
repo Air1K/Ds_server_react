@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import HeadMenu from "./jsx_post/headMenu"
+import Sneg from "./jsx_post/sneg"
+import Cursor_aura from "./jsx_post/Cursor_aura"
+import './css/Style-index.css';
+import './css/Styles.css'
+function getRandomInt(max) {
+	return Math.floor(Math.random() * max);
+  }
+
+  var style = document.querySelector('body').style;
+  //var style_strok = `url('./img-2/osu_fon/${getRandomInt(19)}.png')`;
+  var style_strok = 'url(' + require(`./img-2/osu_fon/${getRandomInt(19)}.png`) + ')';
+  style.setProperty('--background', style_strok);
+
+  
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <HeadMenu />
+        <Sneg />
+        <Cursor_aura />
+        
     </div>
   );
 }
