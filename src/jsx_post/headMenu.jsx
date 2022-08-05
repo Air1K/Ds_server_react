@@ -1,6 +1,7 @@
 import React from 'react';
 import { faSignIn } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {Link} from "react-router-dom";
 
 const headMenu = () => {
     return (
@@ -9,10 +10,10 @@ const headMenu = () => {
                 <div className="menu-top">
                     <div className="nav-menu-top">
                         <div className="menu-top-left">
-                            <a href="#">Главная</a>
-                            <a href="#">О нас</a>
-                            <a href="#">Контакты</a>
-                            <a href="#">Донаты</a>
+                            <Link to="/">Главная</Link>
+                            <Link to="/info">О нас</Link>
+                            <Link to="/contact">Контакты</Link>
+                            <Link to="/donate">Донаты</Link>
                         </div>
                         <div className="on_off_cursor">
                             Вкл / вкл курсор

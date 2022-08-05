@@ -1,29 +1,28 @@
 import React from "react";
-import HeadMenu from "./jsx_post/headMenu"
-import Sneg from "./jsx_post/sneg"
+import HeadMenu from "./jsx_post/headMenu";
 import Cursor_aura from "./jsx_post/Cursor_aura"
-import Logojs from "./jsx_post/Logojs"
-
+import InfoWindow from "./jsx_post/InfoWindow"
+import { BrowserRouter, Routes, Route, Link} from "react-router-dom";
+import Home from "./jsx_post/Home";
 import './css/Style-index.css';
 import './css/Styles.css'
-function getRandomInt(max) {
-	return Math.floor(Math.random() * max);
-  }
-
-  var style = document.querySelector('body').style;
-  //var style_strok = `url('./img-2/osu_fon/${getRandomInt(19)}.png')`;
-  var style_strok = 'url(' + require(`./img-2/osu_fon/${getRandomInt(19)}.png`) + ')';
-  style.setProperty('--background', style_strok);
-
   
 
 function App() {
   return (
     <div className="App">
+        
+        
+        <BrowserRouter>
         <HeadMenu />
-        <Sneg />
         <Cursor_aura />
-        <Logojs />
+          <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/info" element={<InfoWindow />} />
+          <Route path="/contact" element={<Home />} />
+          <Route path="/donate" element={<Home />} />
+          </Routes>
+        </BrowserRouter>
     </div>
   );
 }
