@@ -29,8 +29,8 @@ const Cursor_aura = () => {
 	});
 	style_css_();
 	function style_css_(){
-		X_aura += Math.round((client_X-X_aura) / 3);
-		Y_aura += Math.round((client_Y-Y_aura) / 3);
+		X_aura += Math.round((client_X-X_aura) / 6);
+		Y_aura += Math.round((client_Y-Y_aura) / 6);
 		cursor.style.cssText = "left: "+client_X + "px; top: "+(client_Y)+"px;";
 		aura.style.cssText = "left: "+((X_aura-20-14)) + "px; top: "+(Y_aura-20-14)+"px;";
 		requestAnimationFrame(style_css_);

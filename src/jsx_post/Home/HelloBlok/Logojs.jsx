@@ -1,6 +1,5 @@
-import React, { useState , useEffect, useMemo} from 'react';
+import React, {useEffect} from 'react';
 import $ from 'jquery';
-
 
 function getRandomInt(max) {
 	return Math.floor(Math.random() * max);
@@ -8,7 +7,7 @@ function getRandomInt(max) {
 
   var style = document.querySelector('body').style;
   //var style_strok = `url('../img-2/osu_fon/${getRandomInt(19)}.png')`;
-  var style_strok = 'url(' + require(`../img-2/osu_fon/${getRandomInt(19)}.png`) + ')';
+  var style_strok = 'url(' + require(`../../../img-2/osu_fon/${getRandomInt(19)}.png`) + ')';
   style.setProperty('--background', style_strok);
 
 
@@ -44,7 +43,7 @@ const Logojs = () => {
                 img_1.style.cssText = `transform: translate(${positionX/forbac}%, ${positionY/forbac}%);`;
                 img_2.style.cssText = `transform: translate(${positionX/forfront}%, ${positionY/forfront}%);`;
                 //console.log("Я работаю");
-                if($(".logods").length==1)
+                if($(".logods").length===1)
                 requestAnimationFrame(setMouseParallaxStyle);
             }
             setMouseParallaxStyle();

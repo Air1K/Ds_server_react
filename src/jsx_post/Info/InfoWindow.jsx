@@ -1,8 +1,9 @@
 import React from 'react';
+import './style.sass'
 
 const InfoWindow = () => {
     return (
-        <div>
+        <div className='main'>
             Тут инфа
         </div>
     );

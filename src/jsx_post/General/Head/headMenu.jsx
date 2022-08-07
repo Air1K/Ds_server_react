@@ -20,7 +20,7 @@ const headMenu = () => {
                             <div className="switch-btn switch-on"></div>
                         </div>
                         
-                        <img src={require("../img-2/head.png")} alt=""></img>
+                        <img src={require("../../../img-2/head.png")} alt=""></img>
                     </div>
                     <div className="enter"><a href="#"><FontAwesomeIcon icon={faSignIn} /><div className="enter-item">
                         Войти
