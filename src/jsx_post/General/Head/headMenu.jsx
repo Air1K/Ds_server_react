@@ -22,9 +22,9 @@ const headMenu = () => {
                         
                         <img src={require("../../../img-2/head.png")} alt=""></img>
                     </div>
-                    <div className="enter"><a href="#"><FontAwesomeIcon icon={faSignIn} /><div className="enter-item">
+                    <div className="enter"><Link to="/login"><FontAwesomeIcon icon={faSignIn} /><div className="enter-item">
                         Войти
-                    </div></a></div>
+                    </div></Link></div>
                 </div>
                 </div>
                 

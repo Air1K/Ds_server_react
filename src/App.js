@@ -21,6 +21,7 @@ function App() {
           <Route path="/info" element={<InfoWindow />} />
           <Route path="/contact" element={<Home />} />
           <Route path="/donate" element={<Home />} />
+          <Route path="/login" element={<Home />} />
           </Routes>
         </BrowserRouter>
         <Futer />
