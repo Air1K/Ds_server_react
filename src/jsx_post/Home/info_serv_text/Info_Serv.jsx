@@ -1,61 +1,145 @@
-import React, { useEffect } from 'react';
-import { motion, useScroll } from "framer-motion";
+import React, { useState, useEffect, useRef } from 'react';
+import ReactDOM from 'react-dom';
+import {
+    useViewportScroll,
+    motion,
+    useTransform,
+    useMotionValue
+} from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+
 import $ from 'jquery';
+
 
 
 const Info_Serv = () => {
 
-    const { scrollY } = useScroll()
-    
-    useEffect(() => {
-        const fonmem = document.querySelector(".fon-mem");
-    return scrollY.onChange((latest) => {
-        console.log("Page scroll: ", latest)
-        
-        fonmem.style.cssText = "transform: translateY(" + (750 - ((latest * 50) / 100)) + "px);";
-    })
+    const AnimcssRight = {
+        hidden: {
+            scale: 2,
+            x: -600,
+            opacity: 0,
+        },
+        visible: custom => ({
+            x: 0,
+            scale: 1,
+            opacity: 1,
+            transition: { delay: custom * 0.2 }
+        }),
 
-    
-    }, [])
-   
-        
-    
+    }
+
+    const AnimcssLeft = {
+        hidden: {
+            scale: 2,
+            x: 600,
+            opacity: 0,
+        },
+        visible: custom => ({
+            x: 0,
+            scale: 1,
+            opacity: 1,
+            transition: { delay: custom * 0.2 }
+        }),
+
+    }
+
+    const AnimcssRightBox = {
+        hidden: {
+            scale: 2,
+            x: 600,
+            opacity: 0,
+        },
+        visible: custom => ({
+            x: 0,
+            scale: 1,
+            opacity: 1,
+            transition: { delay: custom * 0.2 }
+        }),
+
+    }
+
+    const AnimcssLeftBox = {
+        hidden: {
+            scale: 2,
+            x: -600,
+            opacity: 0,
+        },
+        visible: custom => ({
+            x: 0,
+            scale: 1,
+            opacity: 0.7,
+            transition: { delay: custom * 0.2 }
+        }),
+
+    }
+
+
+    const { scrollY } = useViewportScroll();
+    const y1 = useTransform(scrollY, [1000, 2200], [250, -500]);
+
+
+
+
+
+
 
     return (
-        <div className="info_serv_text">
-            <div className="fon-mem"></div>
+        <motion.div
+            // viewport={{amount: 0.2}}
+            className="info_serv_text" style={{ overflow: 'visible' }}>
+            <motion.div
+                className="fon-mem"
+                style={{ y: y1 }}
+            />
             <div className="collum-1">
-                <div className="content-1">
-                    <p className="cont-1-p">
-                    
+                <motion.div
+                    initial="hidden"
+                    whileInView={"visible"}
+                    viewport={{ amount: 0.2 }}
+                    className="content-1">
+                    <motion.p custom={1} variants={AnimcssLeft} className="cont-1-p">
+
                         Здесь вы можете найти своих товарищей по osu или другим играм
-                    </p>
-                    <div className="fon-content-1"></div>
-                </div>
-                <div className="content-2">
-                    <p className="cont-2-p">
+                    </motion.p>
+                    <motion.div custom={1} variants={AnimcssLeftBox} className="fon-content-1"></motion.div>
+                </motion.div>
+                <motion.div
+                    initial="hidden"
+                    whileInView={"visible"}
+                    viewport={{ amount: 0.2 }}
+                    className="content-2">
+                    <motion.p custom={1} variants={AnimcssLeft} className="cont-2-p">
                         Принимать участия в различных конкурсах и турнирах внутри сервера
 
-                    </p>
-                    <div className="fon-content-2"></div>
-                </div>
+                    </motion.p>
+                    <motion.div custom={1} variants={AnimcssLeftBox} className="fon-content-2"></motion.div>
+                </motion.div>
             </div>
             <div className="collum-2">
-                <div className="content-3">
-                    <p className="cont-3-p">
+                <motion.div 
+                initial="hidden"
+                whileInView={"visible"}
+                viewport={{ amount: 0.2 }}
+                className="content-3">
+                    <motion.p custom={1} variants={AnimcssRight} className="cont-3-p">
                         Смотреть аниме в компании добрых и адекватных людей
 
-                    </p>
-                    <div className="fon-content-3"></div>
-                </div>
-                <div className="content-4">
-                    <p className="cont-4-p">
+                    </motion.p>
+                    <motion.div custom={1} variants={AnimcssRightBox} className="fon-content-3"></motion.div>
+                </motion.div>
+                <motion.div 
+                initial="hidden"
+                whileInView={"visible"}
+                viewport={{ amount: 0.2 }}
+                className="content-4">
+                    <motion.p custom={1} variants={AnimcssRight} className="cont-4-p">
                         Общаться с добрыми админами и даже найти девушку :)
-                    </p>
-                    <div className="fon-content-4"></div>
-                </div>
+                    </motion.p>
+                    <motion.div custom={1} variants={AnimcssRightBox} className="fon-content-4"></motion.div>
+                </motion.div>
             </div>
-        </div>
+        </motion.div>
     );
 };
 
