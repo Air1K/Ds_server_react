@@ -1,14 +1,9 @@
-import React, { useState, useEffect, useRef } from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react';
 import {
     useViewportScroll,
     motion,
     useTransform,
-    useMotionValue
 } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-
-import $ from 'jquery';
 
 
 
@@ -117,22 +112,22 @@ const Info_Serv = () => {
                 </motion.div>
             </div>
             <div className="collum-2">
-                <motion.div 
-                initial="hidden"
-                whileInView={"visible"}
-                viewport={{ amount: 0.2 }}
-                className="content-3">
+                <motion.div
+                    initial="hidden"
+                    whileInView={"visible"}
+                    viewport={{ amount: 0.2 }}
+                    className="content-3">
                     <motion.p custom={1} variants={AnimcssRight} className="cont-3-p">
                         Смотреть аниме в компании добрых и адекватных людей
 
                     </motion.p>
                     <motion.div custom={1} variants={AnimcssRightBox} className="fon-content-3"></motion.div>
                 </motion.div>
-                <motion.div 
-                initial="hidden"
-                whileInView={"visible"}
-                viewport={{ amount: 0.2 }}
-                className="content-4">
+                <motion.div
+                    initial="hidden"
+                    whileInView={"visible"}
+                    viewport={{ amount: 0.2 }}
+                    className="content-4">
                     <motion.p custom={1} variants={AnimcssRight} className="cont-4-p">
                         Общаться с добрыми админами и даже найти девушку :)
                     </motion.p>
