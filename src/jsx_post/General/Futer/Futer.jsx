@@ -1,28 +1,28 @@
 import React from 'react';
 import './style.sass';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {  } from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faVk, faTelegram } from "@fortawesome/free-brands-svg-icons";
-
+import {Link} from "react-router-dom";
 
 const Futer = () => {
     return (
         <div className="footer-bottom">
             <div className="coll1_bottom">
                 <img src={require("../../../img-2/NO-NLfon.png")} alt="" />
-                    <div className="head_koll1">No osu! - No Life</div>
-                    <div className="nav_menu_koll1">
-                        <a href="">Политика обработки <br />персональных данных</a>
-                        <div className="">© 2022 Дискорд сервер <br /> No osu! - No Life</div>
-                    </div>
+                <div className="head_koll1">No osu! - No Life</div>
+                <div className="nav_menu_koll1">
+                    <a href="">Политика обработки <br />персональных данных</a>
+                    <div className="">© 2022 Дискорд сервер <br /> No osu! - No Life</div>
+                </div>
             </div>
             <div className="coll2_bottom">
                 <div className="head_koll2">НАВИГАЦИЯ</div>
                 <div className="title_koll2">
-                    <a href="#">Главная</a>
-                    <a href="#">О нас</a>
-                    <a href="#">Контакты</a>
-                    <a href="#">Донаты</a>
+                    <Link to="/">Главная</Link>
+                    <Link to="/info">О нас</Link>
+                    <Link to="/contact">Контакты</Link>
+                    <a href='https://www.donationalerts.com/r/lolioosu'>Донаты</a>
+
                 </div>
             </div>
             <div className="coll3_bottom">

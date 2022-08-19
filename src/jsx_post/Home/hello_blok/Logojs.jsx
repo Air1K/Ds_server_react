@@ -1,16 +1,6 @@
 import React, { useEffect } from 'react';
 import $ from 'jquery';
 
-function getRandomInt(max) {
-    return Math.floor(Math.random() * max);
-}
-
-var style = document.querySelector('body').style;
-//var style_strok = `url('../img-2/osu_fon/${getRandomInt(19)}.png')`;
-var style_strok = 'url(' + require(`../../../img-2/osu_fon/${getRandomInt(19)}.png`) + ')';
-style.setProperty('--background', style_strok);
-
-
 const Logojs = () => {
 
     useEffect(() => {
@@ -65,6 +55,7 @@ const Logojs = () => {
             <div className="logods">
                 <div className="img-logo-1"></div>
                 <div className="img-logo-2"></div>
+                <a href="https://discord.gg/xcrfrJ5QsN" className="border-button">Присоединиться</a>
             </div>
         </section>
     );

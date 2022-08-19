@@ -13,7 +13,7 @@ const headMenu = () => {
                             <Link to="/">Главная</Link>
                             <Link to="/info">О нас</Link>
                             <Link to="/contact">Контакты</Link>
-                            <Link to="/donate">Донаты</Link>
+                            <a href='https://www.donationalerts.com/r/lolioosu'>Донаты</a>
                         </div>
                         <div className="on_off_cursor">
                             Вкл / вкл курсор

@@ -5,7 +5,7 @@ import {
     useTransform,
 } from 'framer-motion';
 
-
+import './style.sass'
 
     
 
@@ -95,7 +95,10 @@ const Achive_blok = () => {
             </div>
             <h1 className="dostig-h1">Доска наших достижений</h1>
             <div className="top-tt-box">
-                <div className="collum-top-tt1">
+                <div className="text_">
+                    Тут пока ничего
+                </div>
+                {/* <div className="collum-top-tt1">
                     <motion.div style={{ y: y1 }} className="content-top-tt-koll1-el1">
                         <video autoPlay muted preload loop>
                             <source src={require("../../../video/8mill.mp4")} type="video/mp4"/>
@@ -126,7 +129,7 @@ const Achive_blok = () => {
                         <div className="fon-content-tt2_2"></div>
                         <div className="ramka"></div>
                     </motion.div>
-                </div>
+                </div> */}
                 <div className="fon_mem_stonks"></div>
             </div>
         </div>

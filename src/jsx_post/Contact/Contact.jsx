@@ -1,7 +1,6 @@
 import React from 'react';
-import './style.sass'
 
-const InfoWindow = () => {
+const Contact = () => {
     var style = document.querySelector('body').style;
     var style_strok = 'url()';
     style.setProperty('--background', style_strok);
@@ -12,4 +11,4 @@ const InfoWindow = () => {
     );
 };
 
-export default InfoWindow;
+export default Contact;

@@ -78,7 +78,7 @@ h1 {
 }
 
 body {
-  background-color: #888888;
+  background-color: #18171c;
   max-height: 100vh;
   overflow-x: hidden;
 }
@@ -594,12 +594,12 @@ span {
 
 .fon_mem_stonks {
   background: url("../img-2/stonks_1.webp");
-  top: 700px;
+  /* top: 700px; */
   width: 810px;
   height: 600px;
   background-size: 100%;
   background-position: center;
-  position: absolute;
+  /* position: absolute; */
   z-index: 1;
   filter: blur(4px);
   opacity: 0.6;
@@ -796,7 +796,12 @@ span {
   -webkit-transform: scale(1.1);
   color: green;
 }
-.vstup_block .sekt_inf a:hover i {
+
+svg path{
+  transition: 0.2s linear;
+}
+
+.vstup_block .sekt_inf a:hover svg path{
   color: green;
 }
 .vstup_block .sekt_inf .text-info {
@@ -819,7 +824,7 @@ span {
   border: 2px solid #ffff00;
   box-shadow: 0 0 10px #ffff00;
 }
-.vstup_block * .bottom_add_admin i {
+.vstup_block * .bottom_add_admin svg {
   font-size: 1.4vw;
 }
 
