@@ -7,7 +7,14 @@ const Authorization = () => {
     style.setProperty('--background', style_strok);
     return (
         <div className='main'> 
-            
+            <div className="autoriz">
+                <div className="autoriz-item"></div>
+                <img src="" alt="" />
+                <div className="input_log_div"></div>
+                <div className="input_pass_div"></div>
+                <div className="buttom_div"></div>
+                <div className="bottom_registr"></div>
+            </div>
         </div>
     );
 };
