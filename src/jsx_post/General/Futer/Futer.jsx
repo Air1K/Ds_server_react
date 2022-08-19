@@ -6,7 +6,7 @@ import {Link} from "react-router-dom";
 
 const Futer = () => {
     return (
-        <div className="footer-bottom">
+        <section className="footer-bottom clearfix">
             <div className="coll1_bottom">
                 <img src={require("../../../img-2/NO-NLfon.png")} alt="" />
                 <div className="head_koll1">No osu! - No Life</div>
@@ -45,7 +45,7 @@ const Futer = () => {
                 </div>
 
             </div>
-        </div>
+        </section>
     );
 };
 
