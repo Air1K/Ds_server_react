@@ -1,7 +1,116 @@
+
 .main
-    width: 30%
+    width: 40%
+    height: 100vh
+    margin: auto
+    .autoriz
+        margin-top: 15%
+        backdrop-filter: blur( 6px )
+        text-align: center
+        font: 600 normal 1em 'tahoma'
+        color: #fff
+        text-shadow: 2px 4px 3px rgba(0,0,0,0.3)
+        box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1)
+        -moz-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1)
+        -webkit-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1)
+        -o-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1)
+        -ms-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1)
+        .logo_dov
+            width: 60%
+            height: 60%
+            margin: auto
+            position: relative
+            .Logo_fon
+                position: relative
+                width: 100%
+                margin-bottom: 37px
+                z-index: 2
+            .Logo_bac
+                position: absolute
+                width: 100%
+                left: 5px
+                top: -5px
+                z-index: 1
+        .autoriz-item
+            padding: 5% 0
+            font-size: 3em
+        div
+            input
+                font: 600 normal 1em 'tahoma'
+                outline: none
+                border: none
+                outline-offset: 0
+            input:-webkit-autofill,
+            input:-webkit-autofill:focus
+                transition: background-color 600000s 0s, color 600000s 0s
+
+            input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active
+                -webkit-box-shadow: 0 0 0 0px white inset !important
+                -webkit-text-fill-color: #000000 !important
+
+            .input1, .input2
+                //font-family: Poppins-Regular
+                font-size: 15px
+                color: #000000
+                line-height: 1.2
+                display: block
+                width: 100%
+                height: 45px
+                background: transparent
+                padding: 0 5px
+        .input_log_div, .input_pass_div
+            border-bottom: 2px solid #adadad
+            width: 50%
+            margin: auto
+            margin-bottom: 37px
+        .conteiner_Log_reg
+            width: 50%
+            margin: auto
+            display: flex
+            justify-content: space-between
+            flex-direction: column
+            align-items: center
+            .buttom_div
+                margin-bottom: 20%
+                a.button8
+                    //width: 20%
+                    display: inline-block
+                    color: white
+                    font-weight: 700
+                    text-decoration: none
+                    user-select: none
+                    padding: .5em 2em
+                    outline: none
+                    border: 2px solid
+                    border-radius: 1px
+                    transition: 0.2s
+                a.button8:hover
+                    background: rgba(255,255,255,.2)
+                a.button8:active
+                    background: white
+            .bottom_registr
+                padding-bottom: 10%
+                a
+                    color: #a3c3ff
+                    transition: 0.3s
+                a:hover
+                    color: #007bff
+    .autoriz
+        position: relative
+    .autoriz::before
+        content: ""
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        background-color: #494949
+        backdrop-filter: blur(5px)
+        border-radius: 10px
+        opacity: 0.1
+        z-index: -1
+
 
 .footer-bottom
     overflow-y: hidden
     box-shadow: 0px -15px 34px 10px #18171c
-

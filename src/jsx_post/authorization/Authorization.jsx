@@ -1,21 +1,24 @@
 import React from 'react';
+import { Routes, Route, Link } from "react-router-dom";
 import './style.sass';
-import MyImage from '../../img-2/fon.jpg';
+import MyImage from '../../img-2/fon2.jpg';
+import SignIn from './sign_in/SignIn';
+import Logine from './logine/Logine';
 const Authorization = () => {
     var style = document.querySelector('body').style;
     var style_strok = `url(${MyImage})`;
     style.setProperty('--background', style_strok);
+    style.setProperty('--filter', 'blur(0px)');
     return (
-        <div className='main'> 
+        <div className='main'>
             <div className="autoriz">
-                <div className="autoriz-item"></div>
-                <img src="" alt="" />
-                <div className="input_log_div"></div>
-                <div className="input_pass_div"></div>
-                <div className="buttom_div"></div>
-                <div className="bottom_registr"></div>
+                <Routes>
+                    <Route path="" element={<Logine />} />
+                    <Route path="Sign_up" element={<SignIn />} />
+                </Routes>
             </div>
-        </div>
+
+        </div >
     );
 };
 

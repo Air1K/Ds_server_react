@@ -26,11 +26,11 @@ function App() {
         <HeadMenu />
         <Cursor_aura />
           <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/info" element={<InfoWindow />} />
-          <Route path="/contact" element={<Contact />} />
+          <Route path="" element={<Home />} />
+          <Route path="info" element={<InfoWindow />} />
+          <Route path="contact" element={<Contact />} />
           {/* <Route path="/donate" element={<Home />} /> */}
-          <Route path="/login" element={<Authorization />} />
+          <Route path="login/*" element={<Authorization />} />
           </Routes>
           <Futer />
         </BrowserRouter>

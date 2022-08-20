@@ -7,7 +7,7 @@ function AppPhone() {
                 Приложение не адаптивно для мобильных устройств :)
             </div>
             <div className="img_class">
-                <img src={require("./img-2/Phone_site.jpg")} alt="НЕ УДАЛОСЬ ЗАГРУЗИТЬ КАРТИНКУ" />
+                <img className='PhoneIMG' src={require("./img-2/Phone_site.jpg")} alt="НЕ УДАЛОСЬ ЗАГРУЗИТЬ КАРТИНКУ" />
             </div>
         </div>
     );

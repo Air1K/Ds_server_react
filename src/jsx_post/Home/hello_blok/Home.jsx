@@ -13,6 +13,7 @@ const Home = () => {
         var style = document.querySelector('body').style;
         var style_strok = 'url(' + require(`../../../img-2/osu_fon/${getRandomInt(19)}.png`) + ')';
         style.setProperty('--background', style_strok);
+        style.setProperty('--filter', 'blur(0px)');
 
     return (
         <div>

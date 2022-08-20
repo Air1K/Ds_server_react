@@ -37,7 +37,7 @@ body::before {
     background-size: cover;
     background-position: center;
     position: fixed;
-    filter: blur(5px); /* Размытие картинки */
+    filter: var(--filter); /* Размытие картинки */
   }
 
 body, html{
@@ -105,7 +105,6 @@ body, html{
     position: -webkit-sticky;
     position: sticky;
     top: 0px;
-
     z-index: 4;
 }
 
@@ -154,28 +153,25 @@ margin-top: 10px;
 } 
 
 .menu-top{
+    position: relative;
     height: 100%;
     width: 100%;
-    background-color: rgb(247 246 246);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    opacity: .6;
     display: flex;
-    float: left; 
+    /* float: left;  */
 }
+
 .menu-top::before {
-    content: 'апвпа';
+    content: "";
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    margin: -30px;
     z-index: -1;
-    -webkit-filter: blur(20px);
-    filter: blur(20px);
+    background-color: #f7f7f7;
+    opacity: .6
   }
-
+  
 .nav-menu-top{
     width: 90%;
     height: 80%;
