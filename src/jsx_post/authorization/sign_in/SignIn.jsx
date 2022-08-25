@@ -9,6 +9,7 @@ const SignIn = () => {
                 <img className="Logo_fon" src={require("../../../img-2/NO-NLfon.png")} alt="" />
                 <img className="Logo_bac" src={require("../../../img-2/NO-NLbac.png")} alt="" />
             </div>
+            <form action='http://localhost:5000/api/post' method='POST'>
             <div className="input_full_name_div">
                 <input className='input1' autocomplete="off" type="text" name="name" id="name" placeholder="Name..." />
             </div>
@@ -26,9 +27,10 @@ const SignIn = () => {
             </div>
             <div className="conteiner_Log_reg">
                 <div className="buttom_div">
-                    <a href='#' className="button8" >Create</a>
+                    <a href='#' className="button8" type="submit">Create</a>
                 </div>
             </div>
+            </form>
         </div>
     );
 };
