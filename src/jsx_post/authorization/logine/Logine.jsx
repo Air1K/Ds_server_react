@@ -9,10 +9,10 @@ const Logine = () => {
                 <img className="Logo_bac" src={require("../../../img-2/NO-NLbac.png")} alt="" />
             </div>
             <div className="input_log_div">
-                <input className='input1' autocomplete="off" type="text" name="email" id="email" placeholder="Email" />
+                <input className='input1'  type="text" name="email" id="email" placeholder="Email" />
             </div>
             <div className="input_pass_div">
-                <input className='input2' autocomplete="off" type="Password" name="password" id="password" placeholder="Password" />
+                <input className='input2'  type="Password" name="password" id="password" placeholder="Password" />
             </div>
             <div className="conteiner_Log_reg">
                 <div className="buttom_div">

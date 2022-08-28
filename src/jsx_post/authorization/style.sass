@@ -47,7 +47,14 @@
             input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active
                 -webkit-box-shadow: 0 0 0 0px white inset !important
                 -webkit-text-fill-color: #000000 !important
-
+            input:invalid 
+                border-color: red
+            input:valid 
+                border-color: green
+            input:invalid:not:placeholder-shown
+                border-color: red
+            input:valid:not:placeholder-shown
+                border-color: green
             .input1, .input2,  .input3 , .input4 , .input5
                 //font-family: Poppins-Regular
                 font-size: 15px
@@ -59,6 +66,7 @@
                 background: transparent
                 padding: 0 5px
         .input_log_div, .input_pass_div, .input_full_name_div, .input_user_name_div, .input_repeat_password_div
+            position: relative
             border-bottom: 2px solid #adadad
             width: 50%
             margin: auto
@@ -84,6 +92,7 @@
                     border: 2px solid
                     border-radius: 1px
                     transition: 0.2s
+                	
                 a.button8:hover
                     background: rgba(255,255,255,.2)
                 a.button8:active

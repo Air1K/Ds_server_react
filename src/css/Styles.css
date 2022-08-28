@@ -683,7 +683,6 @@ span {
 }
 
 .bg-image-blur, .bg-image {
-  background: url("");
   position: absolute;
   top: 0;
   left: 0;
@@ -915,7 +914,6 @@ svg path{
 .clearfix {
   zoom:1; /* For IE 6/7 (trigger hasLayout) */
 }
-/*# sourceMappingURL=style.css.map */
 
 .parallax_{
   min-height: 100vh;
