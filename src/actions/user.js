@@ -8,10 +8,12 @@ export const registration = async (name, email, username, password) => {
             username,
             password
         })
-        console.log(JSON.stringify(response.data.message))
-    }
-    catch (e) {
+        console.log(JSON.stringify(response.data.message));
+        alert("Регистрация выполнена");
+    } catch (e) {
+        alert("Ошибка регистрации, возможно этот emal уже зарегистрирован");
         console.log(e)
+
     }
 
 }
