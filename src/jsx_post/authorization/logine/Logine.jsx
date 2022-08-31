@@ -1,6 +1,67 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
+import {login_user} from "../../../actions/login";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faTriangleExclamation} from "@fortawesome/free-solid-svg-icons";
+
 const Logine = () => {
+    const [email, setEmail] = useState(``);
+    const [password, setPassword] = useState(``);
+
+    const [emailDirtu, setEmailDirtu] = useState(false)
+    const [passwordDirtu, setPasswordDirtu] = useState(false)
+
+    const [emailError, setEmailError] = useState('email не может быть пустым');
+    const [passwordError, setPasswordError] = useState('пароль не может быть пустым')
+
+    const emailHandler = (e) => {
+        setEmail(e.target.value);
+        const result = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+        if (!result.test(String(e.target.value).toLowerCase())) {
+            setEmailError("Некорректный email");
+        } else {
+            setEmailError('');
+        }
+    }
+
+    const passwordHandler = (e) => {
+        setPassword(e.target.value);
+        console.log(password)
+
+        const result = /^[a-zA-Z0-9!@#$%^&*]{6,16}$/;
+        if (!result.test(String(e.target.value).toLowerCase())) {
+            setPasswordError("Некорректный пароль");
+        } else {
+            setPasswordError('');
+        }
+    }
+
+    const blurHandler = (e) => {
+
+        switch (e.target.name) {
+            case 'email':
+                setEmailDirtu(true)
+                break
+            case 'password':
+                setPasswordDirtu(true)
+                break
+        }
+    }
+
+    async function server(){
+
+        if(!(emailError || passwordError)){
+             const obj_user = await login_user(email, password);
+            console.log(obj_user);
+            const obj_locUS = localStorage.getItem('user')
+            const json_pars = JSON.parse(obj_locUS);
+            console.log( json_pars.user.email );
+            // document.location.href = "/";
+
+        }
+
+    }
+
     return (
         <div>
             <div className="autoriz-item">Welcome</div>
@@ -9,18 +70,22 @@ const Logine = () => {
                 <img className="Logo_bac" src={require("../../../img-2/NO-NLbac.png")} alt="" />
             </div>
             <div className="input_log_div">
-                <input className='input1'  type="text" name="email" id="email" placeholder="Email" />
+                {(emailDirtu && emailError) &&
+                    <div style={{opacity:'0.8' ,fontSize:'16px', color: "red", position: "absolute", top: '110%'}}><FontAwesomeIcon icon={faTriangleExclamation} /> {emailError}</div>}
+                <input onBlur={e => blurHandler(e)} onChange={e => emailHandler(e)} value={email} className='input1'  type="text" name="email" id="email" placeholder="Email" />
             </div>
             <div className="input_pass_div">
-                <input className='input2'  type="Password" name="password" id="password" placeholder="Password" />
+                {(passwordDirtu && passwordError) &&
+                    <div style={{opacity:'0.8' ,fontSize:'16px', color: "red", position: "absolute", top: '110%'}}><FontAwesomeIcon icon={faTriangleExclamation} /> {passwordError}</div>}
+                <input onChange={e => passwordHandler(e)} onBlur={e => blurHandler(e)} className='input2'  type="Password" name="password" id="password" placeholder="Password" />
             </div>
             <div className="conteiner_Log_reg">
                 <div className="buttom_div">
-                    <Link to="" className="button8" >Login</Link>
+                    <Link to="" onClick={server} className="button8" >Login</Link>
                 </div>
                 <div className="bottom_registr">
                     <span>Don’t have an account? </span>
-                    <Link to="Sign_up" className="register_">Sign Up</Link>
+                    <Link to="Sign_up"  className="register_">Sign Up</Link>
                 </div>
             </div>
         </div>

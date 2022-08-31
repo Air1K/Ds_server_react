@@ -118,7 +118,6 @@ const SignIn = () => {
         // console.log((nameError || emailError || usernameError || passwordError || repeat_passwordError),"Запрос", nameError, emailError, nameError||emailError);
         if(!(nameError || emailError || usernameError || passwordError || repeat_passwordError)){
             registration(name, email, username, password);
-            alert("Запрос регистрации");
             document.location.href = "/login";
 
         }
