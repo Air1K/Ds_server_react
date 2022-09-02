@@ -73,9 +73,13 @@ const HeadMenu = () => {
                                         <img className="border-avatar" src={require("../../../img-2/border_avarar.png")}
                                              alt=""/>
                                     </button>
-                                    {menu_user ? (
+                                    {/*menu_user*/}
+                                    {1 ? (
                                         <div className="menu-user-drop">
-                                            dfgdgf
+                                            <div className="display-block-account">
+                                            <a className="setup_account" href="#">Настройки</a>
+                                            <a className="exit_account" href="#">Выход</a>
+                                            </div>
                                         </div>) : (<div/>)}
                                 </div>
                             </div>)}
