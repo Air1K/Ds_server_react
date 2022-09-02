@@ -4,7 +4,7 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {Link} from "react-router-dom";
 import './styleHead.sass'
 
-async function Locsl_chek(){
+async function Locsl_chek() {
     const obj_locUS = await localStorage.getItem('user')
     const json_pars = await JSON.parse(obj_locUS);
     return json_pars;
@@ -17,11 +17,17 @@ const HeadMenu = () => {
 
     const obj_locUS = localStorage.getItem('user')
     const json_pars = JSON.parse(obj_locUS);
-    if(json_pars){
+    if (json_pars) {
         log_user = false;
     }
+    async function log_out(){
+        await localStorage.removeItem('user')
+        document.location.href = "/";
+    }
 
-
+    function BlurHandler_head(){
+         setMenuuser(false);
+    }
     // if(json_pars === null){
     //
     //     setLog_users(false);
@@ -40,6 +46,7 @@ const HeadMenu = () => {
                             <Link to="info">О нас</Link>
                             <Link to="contact">Контакты</Link>
                             <a href='https://www.donationalerts.com/r/lolioosu'>Донаты</a>
+                            <Link to="comments">Оставить комментарий <span style={{color:"Yellow", fontSize:"15px"}}>(демо)</span></Link>
                         </div>
                         <div className="on_off_cursor">
                             Вкл / вкл курсор
@@ -61,24 +68,30 @@ const HeadMenu = () => {
                                 <div className="menu-user">
                                     <button
                                         onClick={() => {
-                                            setMenuuser(true);
-                                            console.log(menu_user)
+                                            if(!menu_user){
+                                                setMenuuser(true);
+                                            }else{
+                                                setMenuuser(false);
+                                            }
+
                                         }}
                                         onBlur={() => {
-                                            setMenuuser(false);
-                                            console.log(menu_user)
-                                        }} className="avarat_and_button">
+                                            BlurHandler_head()
+                                        }}
+                                         className="avarat_and_button">
                                         <img className="avatar" src={require("../../../img-2/avatar_user/user5.jpg")}
                                              alt=""/>
                                         <img className="border-avatar" src={require("../../../img-2/border_avarar.png")}
                                              alt=""/>
                                     </button>
                                     {/*menu_user*/}
-                                    {1 ? (
-                                        <div className="menu-user-drop">
+                                    {menu_user ? (
+                                        <div onBlur={() => {
+                                            setMenuuser(false);
+                                        }} className="menu-user-drop">
                                             <div className="display-block-account">
-                                            <a className="setup_account" href="#">Настройки</a>
-                                            <a className="exit_account" href="#">Выход</a>
+                                                <a className="setup_account" href="#">Настройки</a>
+                                                <a className="exit_account" onClick={()=>{log_out()}} href="#">Выход</a>
                                             </div>
                                         </div>) : (<div/>)}
                                 </div>
