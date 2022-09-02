@@ -14,7 +14,7 @@ export const login_user = async (email, password) => {
 
         // console.log(JSON.stringify(response.data.message));
     } catch (e) {
-        await alert("Ошибка регистрации, возможно этот emal уже зарегистрирован");
+        await alert("Ошибка авторизации");
         console.log(e)
 
     }

@@ -56,7 +56,7 @@ const Logine = () => {
             const obj_locUS = localStorage.getItem('user')
             const json_pars = JSON.parse(obj_locUS);
             console.log( json_pars.user.email );
-            // document.location.href = "/";
+            document.location.href = "/";
 
         }
 

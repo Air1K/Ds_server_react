@@ -114,12 +114,12 @@ const SignIn = () => {
         }
     }
 
-    function server(){
-        // console.log((nameError || emailError || usernameError || passwordError || repeat_passwordError),"Запрос", nameError, emailError, nameError||emailError);
-        if(!(nameError || emailError || usernameError || passwordError || repeat_passwordError)){
-            registration(name, email, username, password);
-            document.location.href = "/login";
+    async function server(){
+        // console.log((nameError || emailError || usernameError || passwordError || repeat_passwordError));
+        // console.log(nameError, emailError, usernameError, passwordError, repeat_passwordError);
 
+        if(!(nameError || emailError || usernameError || passwordError || repeat_passwordError)){
+            await registration(name, email, username, password);
         }
 
     }
@@ -175,7 +175,7 @@ const SignIn = () => {
                 <div className="conteiner_Log_reg">
                     <div className="buttom_div">
                         {/* onClick={()=>} */}
-                        <a href='/login' onClick={server}className="button8" id='buttons' type="submit">Create</a>
+                        <a href='#' onClick={server}className="button8" id='buttons' type="submit">Create</a>
                     </div>
                 </div>
             </form>
