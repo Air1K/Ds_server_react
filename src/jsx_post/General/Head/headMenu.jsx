@@ -25,9 +25,6 @@ const HeadMenu = () => {
         document.location.href = "/";
     }
 
-    function BlurHandler_head(){
-         setMenuuser(false);
-    }
     // if(json_pars === null){
     //
     //     setLog_users(false);
@@ -74,9 +71,6 @@ const HeadMenu = () => {
                                                 setMenuuser(false);
                                             }
 
-                                        }}
-                                        onBlur={() => {
-                                            BlurHandler_head()
                                         }}
                                          className="avarat_and_button">
                                         <img className="avatar" src={require("../../../img-2/avatar_user/user5.jpg")}
