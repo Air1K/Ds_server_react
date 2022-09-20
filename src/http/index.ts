@@ -1,7 +1,4 @@
 import axios from 'axios';
-import {config} from "@fortawesome/fontawesome-svg-core";
-import {Simulate} from "react-dom/test-utils";
-import error = Simulate.error;
 import {AuthResponse} from "../models/response/AuthResponse";
 
 export const API_URL = 'http://localhost:5000/api'
@@ -28,7 +25,6 @@ $api.interceptors.response.use((config) => {
         } catch (e) {
             console.log("Пользователь не авторизован")
         }
-
     }
 })
 

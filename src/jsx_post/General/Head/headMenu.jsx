@@ -37,7 +37,6 @@ const HeadMenu = () => {
 
     useEffect(()=>{
         setMenuuser(false);
-        console.log(menu_user)
     }, [store.isAuth])
 
     return (
