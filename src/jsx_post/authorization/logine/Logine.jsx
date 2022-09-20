@@ -1,10 +1,20 @@
-import React, {useState} from 'react';
-import { Link } from 'react-router-dom';
+import React, {useContext, useEffect, useState} from 'react';
+import { Link, Navigate} from 'react-router-dom';
 import {login_user} from "../../../actions/login";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faTriangleExclamation} from "@fortawesome/free-solid-svg-icons";
+import {Context} from "../../../index";
+import {observer} from "mobx-react-lite";
+
+
 
 const Logine = () => {
+
+    const {store} = useContext(Context);
+
+    const [link_main, setLink_main] = useState(false);
+
+
     const [email, setEmail] = useState(``);
     const [password, setPassword] = useState(``);
 
@@ -48,19 +58,28 @@ const Logine = () => {
         }
     }
 
+
+
     async function server(){
 
         if(!(emailError || passwordError)){
-             const obj_user = await login_user(email, password);
-            console.log(obj_user);
-            const obj_locUS = localStorage.getItem('user')
-            const json_pars = JSON.parse(obj_locUS);
-            console.log( json_pars.user.email );
-            document.location.href = "/";
+            await store.login(email, password);
+            await setLink_main(store.isAuth);
+            //  const obj_user = await login_user(email, password);
+            // console.log(obj_user);
+            // const obj_locUS = localStorage.getItem('user')
+            // const json_pars = JSON.parse(obj_locUS);
+            // console.log( json_pars.user.email );
+            // document.location.href = "/";
 
         }
 
     }
+
+    useEffect(()=>{
+        store.setMessages('');
+
+    },[])
 
     return (
         <div>
@@ -82,6 +101,8 @@ const Logine = () => {
             <div className="conteiner_Log_reg">
                 <div className="buttom_div">
                     <Link to="" onClick={server} className="button8" >Login</Link>
+                    {link_main?<Navigate to="/"/>:<div/>}
+                    <div className="passwordError" style={{color:'red'}}>{store.messages}</div>
                 </div>
                 <div className="bottom_registr">
                     <span>Don’t have an account? </span>
@@ -92,4 +113,4 @@ const Logine = () => {
     );
 };
 
-export default Logine;
+export default observer(Logine);

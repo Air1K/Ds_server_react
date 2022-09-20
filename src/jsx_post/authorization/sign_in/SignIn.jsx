@@ -1,12 +1,14 @@
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import { faTriangleExclamation } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import './style.sass'
 import {registration} from '../../../actions/user.js';
+import {Context} from "../../../index";
 
 
 const SignIn = () => {
 
+    const {store} = useContext(Context);
 
     const [name, setName] = useState(``);
     const [email, setEmail] = useState(``);
@@ -114,12 +116,12 @@ const SignIn = () => {
         }
     }
 
-    async function server(){
+     async function server(){
         // console.log((nameError || emailError || usernameError || passwordError || repeat_passwordError));
         // console.log(nameError, emailError, usernameError, passwordError, repeat_passwordError);
 
         if(!(nameError || emailError || usernameError || passwordError || repeat_passwordError)){
-            await registration(name, email, username, password);
+             await store.registration(name, email, username, password);
         }
 
     }
