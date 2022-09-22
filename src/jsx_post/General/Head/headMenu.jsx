@@ -91,7 +91,7 @@ const HeadMenu = () => {
                                             setMenuuser(false);
                                         }} className="menu-user-drop">
                                             <div className="display-block-account">
-                                                <a className="email_account" href="#">{store.user.email}</a>
+                                                <a className="email_account" href="#" style={{fontSize: "18px", color:"#08f7e4"}}>{store.user.email}</a>
                                                 <a className="setup_account" href="#">Настройки</a>
                                                 <a className="exit_account" onClick={()=>{log_out()}} href="#">Выход</a>
                                             </div>

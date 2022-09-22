@@ -1,14 +1,19 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import { faTriangleExclamation } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import './style.sass'
 import {registration} from '../../../actions/user.js';
 import {Context} from "../../../index";
+import {Navigate} from "react-router-dom";
+import {observer} from "mobx-react-lite";
 
 
 const SignIn = () => {
 
     const {store} = useContext(Context);
+
+    const [link_main, setLink_main] = useState(false);
+
 
     const [name, setName] = useState(``);
     const [email, setEmail] = useState(``);
@@ -122,9 +127,14 @@ const SignIn = () => {
 
         if(!(nameError || emailError || usernameError || passwordError || repeat_passwordError)){
              await store.registration(name, email, username, password);
+             await setLink_main(store.isAuth);
         }
 
     }
+
+    useEffect(()=>{
+        store.setMessages('');
+    },[])
 
     return (
 
@@ -178,6 +188,8 @@ const SignIn = () => {
                     <div className="buttom_div">
                         {/* onClick={()=>} */}
                         <a href='#' onClick={server}className="button8" id='buttons' type="submit">Create</a>
+                        {link_main?<Navigate to="/"/>:<div/>}
+                        <div className="passwordError" style={{color:'red'}}>{store.messages}</div>
                     </div>
                 </div>
             </form>
@@ -185,4 +197,4 @@ const SignIn = () => {
     );
 };
 
-export default SignIn;
+export default  observer(SignIn);
