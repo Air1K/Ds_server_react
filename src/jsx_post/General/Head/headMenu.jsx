@@ -1,16 +1,23 @@
-import React, {useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import {faSignIn} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {Link} from "react-router-dom";
 import './styleHead.sass'
+import {Context} from "../../../index";
+import {observer} from "mobx-react-lite";
+const logout = require ('../../../actions/logout');
 
-async function Locsl_chek() {
-    const obj_locUS = await localStorage.getItem('user')
-    const json_pars = await JSON.parse(obj_locUS);
-    return json_pars;
-}
+
+// async function Locsl_chek() {
+//     const obj_locUS = await localStorage.getItem('user')
+//     const json_pars = await JSON.parse(obj_locUS);
+//     return json_pars;
+// }
 
 const HeadMenu = () => {
+
+    const {store} = useContext(Context);
+
     const [menu_user, setMenuuser] = useState(false);
 
     let log_user = true;
@@ -21,18 +28,17 @@ const HeadMenu = () => {
         log_user = false;
     }
     async function log_out(){
-        await localStorage.removeItem('user')
-        document.location.href = "/";
+
+        await store.logout();
+        // await localStorage.removeItem('user')
+        // await logout();
+        // document.location.href = "/";
     }
 
-    // if(json_pars === null){
-    //
-    //     setLog_users(false);
-    // }else{
-    //     setLog_users(true);
-    // }
+    useEffect(()=>{
+        setMenuuser(false);
+    }, [store.isAuth])
 
-    // console.log(json_pars)
     return (
         <div className="content ">
             <div className="contents">
@@ -43,7 +49,7 @@ const HeadMenu = () => {
                             <Link to="info">О нас</Link>
                             <Link to="contact">Контакты</Link>
                             <a href='https://www.donationalerts.com/r/lolioosu'>Донаты</a>
-                            <Link to="comments">Оставить комментарий <span style={{color:"Yellow", fontSize:"15px"}}>(демо)</span></Link>
+                            <Link to="comments" >Оставить комментарий <span style={{color:"Yellow", fontSize:"15px"}}>(демо)</span></Link>
                         </div>
                         <div className="on_off_cursor">
                             Вкл / вкл курсор
@@ -53,7 +59,7 @@ const HeadMenu = () => {
                         <img src={require("../../../img-2/head2.png")} alt=""></img>
                     </div>
                     <div className="enter">
-                        {log_user ? (
+                        {!store.isAuth ? (
                             <Link to="login">
                                 <FontAwesomeIcon icon={faSignIn}/>
                                 <div className="enter-item">
@@ -84,6 +90,7 @@ const HeadMenu = () => {
                                             setMenuuser(false);
                                         }} className="menu-user-drop">
                                             <div className="display-block-account">
+                                                <a className="email_account" href="#" style={{fontSize: "18px", color:"#08f7e4"}}>{store.user.username}</a>
                                                 <a className="setup_account" href="#">Настройки</a>
                                                 <a className="exit_account" onClick={()=>{log_out()}} href="#">Выход</a>
                                             </div>
@@ -98,4 +105,4 @@ const HeadMenu = () => {
     );
 };
 
-export default HeadMenu;
+export default observer(HeadMenu);
