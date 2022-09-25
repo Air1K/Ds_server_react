@@ -24,10 +24,10 @@ function App() {
 
 
     }, [])
-    if(store.isLoading){
-        console.log(store.isLoading)
-        return <div>Загрузка...</div>
-    }
+    // if(store.isLoading){
+    //     console.log(store.isLoading)
+    //     return <div>Загрузка...</div>
+    // }
     return (
         <div className="App">
 

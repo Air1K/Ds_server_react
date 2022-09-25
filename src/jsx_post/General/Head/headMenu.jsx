@@ -49,7 +49,7 @@ const HeadMenu = () => {
                             <Link to="info">О нас</Link>
                             <Link to="contact">Контакты</Link>
                             <a href='https://www.donationalerts.com/r/lolioosu'>Донаты</a>
-                            <Link to="comments">Оставить комментарий <span style={{color:"Yellow", fontSize:"15px"}}>(демо)</span></Link>
+                            <Link to="comments" >Оставить комментарий <span style={{color:"Yellow", fontSize:"15px"}}>(демо)</span></Link>
                         </div>
                         <div className="on_off_cursor">
                             Вкл / вкл курсор
@@ -59,7 +59,6 @@ const HeadMenu = () => {
                         <img src={require("../../../img-2/head2.png")} alt=""></img>
                     </div>
                     <div className="enter">
-                        {console.log(store.isAuth)}
                         {!store.isAuth ? (
                             <Link to="login">
                                 <FontAwesomeIcon icon={faSignIn}/>
@@ -91,7 +90,7 @@ const HeadMenu = () => {
                                             setMenuuser(false);
                                         }} className="menu-user-drop">
                                             <div className="display-block-account">
-                                                <a className="email_account" href="#" style={{fontSize: "18px", color:"#08f7e4"}}>{store.user.email}</a>
+                                                <a className="email_account" href="#" style={{fontSize: "18px", color:"#08f7e4"}}>{store.user.username}</a>
                                                 <a className="setup_account" href="#">Настройки</a>
                                                 <a className="exit_account" onClick={()=>{log_out()}} href="#">Выход</a>
                                             </div>

@@ -1,34 +1,60 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 import "./style.sass"
 import {comment} from "../../actions/comment";
 import {comment_get} from "../../actions/commentGet";
 import {useDispatch, useSelector} from "react-redux";
 import axios from "axios";
 import {login_user} from "../../actions/login";
-
+import {IComments} from "../../models/IComments";
+import CommentService from "../../services/CommentService";
+import {Context} from "../../index";
+import {Navigate} from "react-router-dom";
 
 const Comments = () => {
+    const {store} = useContext(Context);
+
+    const [link_main, setLink_main] = useState(false);
+
     var style = document.querySelector('body').style;
     var style_strok = 'url()';
     style.setProperty('--background', style_strok);
     style.setProperty('--filter', 'blur(5px)');
-    const [comment_post_get, setComment_post_get] = new useState([])
-    const [lov, setLov] = new useState([])
+    const [comment_post_get, setComment_post_get] = useState([])
+    const [lov, setLov] = useState([])
+    const [massComment, setMassComment] = useState<IComments[]>([]);
 
-    useEffect(()=>{
-        async function ret_mass(){
-            await comment_get();
-            setComment_post_get(await JSON.parse(sessionStorage.getItem('get_comment')))
-            console.log("AAAAAAAAAA")
+    useEffect(() => {
+        async function ret_mass() {
+            try {
+                const response = await CommentService.fetchComments();
+                console.log(response);
+                let reversed = [...response.data].reverse();
+                setMassComment(reversed);
+            } catch (e) {
+                console.log(e);
+            }
         }
+
         ret_mass();
-    },[lov]);
+    }, []);
 
     const [comment_text, setComment_text] = useState('')
+
+
+
     const obj_locUS = localStorage.getItem('user')
     const json_pars = JSON.parse(obj_locUS);
 
-console.log(comment_post_get)
+    async function PostComment() {
+        try {
+            await store.commentPush(store.user.id, comment_text);
+
+        } catch (e) {
+            console.log(e);
+        }
+    }
+
+
 
     return (
         <div className="commentarii">
@@ -38,11 +64,15 @@ console.log(comment_post_get)
                     <p>Комментарий<br/>
                         <textarea onChange={e => {
                             setComment_text(e.target.value)
-                        }} name="comment" cols="40" rows="3" value={comment_text}></textarea>
+
+                        }} name="comment"// cols="40" rows="3"
+                                  value={comment_text}>
+
+                        </textarea>
                     </p>
                     <p>
                         <button onClick={() => {
-                            comment(json_pars.user.username, comment_text);setLov([]);
+                            PostComment();
                         }}>Отправить
                         </button>
                         <input type="reset" value="Очистить"/>
@@ -50,9 +80,14 @@ console.log(comment_post_get)
 
                 </div>
                 <div className="get-Coments">
-                    {comment_post_get.map((comment_post_gets) =>
+                    {massComment.map((massComments) =>
 
-                        <div key={comment_post_gets._id}>{comment_post_gets.username}</div>
+                        <div key={massComments._id}>
+                            <div className="username">{massComments.username}</div>
+                            <div className="time">{massComments.time}</div>
+                            <div className="contents">{massComments.content}</div>
+                        </div>
+
                     )}
 
                     {/*{comment_post_get[1].username}*/}

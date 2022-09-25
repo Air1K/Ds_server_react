@@ -4,6 +4,7 @@ import AuthService from "../services/AuthService";
 import axios from "axios";
 import {AuthResponse} from "../models/response/AuthResponse";
 import {API_URL} from "../http";
+import CommentService from "../services/CommentService";
 
 export default class Store{
     user = {} as IUser
@@ -82,4 +83,17 @@ export default class Store{
             this.setIsLoading(false);
         }
     }
+
+    async commentPush(id: string, content: string){
+        console.log(content);
+        try {
+            const response = await CommentService.fetchCommentsPost(id, content);
+            console.log(response);
+
+        } catch (e){
+            console.log(e.response?.data?.message);
+            this.setMessages(e.response?.data?.message);
+        }
+    }
+
 }
