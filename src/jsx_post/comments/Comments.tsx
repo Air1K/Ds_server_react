@@ -9,6 +9,7 @@ import {IComments} from "../../models/IComments";
 import CommentService from "../../services/CommentService";
 import {Context} from "../../index";
 import {Navigate} from "react-router-dom";
+import {API_URL} from "../../http";
 
 const Comments = () => {
     const {store} = useContext(Context);
@@ -21,21 +22,42 @@ const Comments = () => {
     style.setProperty('--filter', 'blur(5px)');
     const [comment_post_get, setComment_post_get] = useState([])
     const [lov, setLov] = useState([])
-    const [massComment, setMassComment] = useState<IComments[]>([]);
+    const [massComment, setMassComment] = useState([]);
+
+
+    async function connectComments() {
+        try {
+            // const response = await CommentService.fetchComments();
+            const eventSource = new EventSource(`${API_URL}/connect`)
+            eventSource.onmessage = function (event) {
+                const message = JSON.parse(event.data);
+                // let reversed = [...message].reverse();
+                setMassComment(prev => [message, ...prev]);
+                console.log(message);
+            }
+            // console.log(response);
+            // let reversed = [...response.data].reverse();
+            // setMassComment(reversed);
+        } catch (e) {
+            console.log(e);
+        }
+    }
+
+    async function get_comments() {
+        try {
+            const response = await CommentService.fetchComments();
+            console.log(response);
+            let reversed = [...response.data].reverse();
+            setMassComment(reversed);
+        } catch (e) {
+            console.log(e);
+        }
+    }
 
     useEffect(() => {
-        async function ret_mass() {
-            try {
-                const response = await CommentService.fetchComments();
-                console.log(response);
-                let reversed = [...response.data].reverse();
-                setMassComment(reversed);
-            } catch (e) {
-                console.log(e);
-            }
-        }
-
-        ret_mass();
+        console.log("Сработал useEffect")
+        get_comments();
+        connectComments();
     }, []);
 
     const [comment_text, setComment_text] = useState('')
@@ -57,7 +79,7 @@ const Comments = () => {
 
 
     return (
-        <div className="commentarii">
+        <div className="container__">
             <div className="main-commentarii">
                 <div className="post-comments">
 
@@ -80,15 +102,19 @@ const Comments = () => {
 
                 </div>
                 <div className="get-Coments">
-                    {massComment.map((massComments) =>
+                    {   massComment ? (
+                        massComment.map((massComments) =>
 
-                        <div key={massComments._id}>
+                        <div key={massComments.time}>
                             <div className="username">{massComments.username}</div>
                             <div className="time">{massComments.time}</div>
                             <div className="contents">{massComments.content}</div>
                         </div>
 
-                    )}
+                    ))
+                    :
+                        (<div>Комментарии пусты</div>)
+                    }
 
                     {/*{comment_post_get[1].username}*/}
                     {/*{clone_comment.length}*/}
