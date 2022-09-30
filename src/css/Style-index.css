@@ -88,13 +88,6 @@ body, html{
     width: 25px;
 }
 
-.container__{
-
-    width: 55%;
-    margin: auto;
-    margin-bottom: 10px;
-    margin-top: 10px;
-}
 
 .content{
     /* border: 1px solid black; */
@@ -165,11 +158,14 @@ margin-top: 10px;
 } 
 
 .menu-top{
-    position: relative;
     height: 100%;
-    width: 100%;
+    width: 90%;
     display: flex;
-    /* float: left;  */
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin: auto;
 }
 
 .menu-top::before {
@@ -184,9 +180,9 @@ margin-top: 10px;
   }
   
 .nav-menu-top{
-    width: 90%;
-    height: 80%;
-    margin: 9px 0 9px 0;
+    width: 85%;
+    height: 75%;
+    margin: 1.1% auto 1.1% auto;
     align-items: center;
     vertical-align: middle;
     display: flex;
@@ -203,11 +199,6 @@ margin-top: 10px;
 .menu-top-left a{
     transition: 0.2s linear;
     text-align: center;
-}
-
-.menu-top-left{
-    margin-left: 80px;
-    
 }
 
 .menu-top-left a:hover{
@@ -273,7 +264,6 @@ margin-top: 10px;
 }
 
 .enter{
-    float: left;
     display: flex;
     flex-grow: 3;
     padding: auto;
@@ -283,6 +273,7 @@ margin-top: 10px;
     flex-direction: column;
     justify-content: center;
     align-content: center;
+    margin-left: 10%;
 }
 .enter a i{
    font-size: 25px;
