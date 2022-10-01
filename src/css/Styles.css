@@ -78,6 +78,7 @@ h1 {
 }
 
 body {
+  position: relative;
   background-color: #18171c;
   max-height: 100vh;
   overflow-x: hidden;

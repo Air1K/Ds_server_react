@@ -24,21 +24,21 @@ a{
     color: rgb(24,23,28)
 }
 
-body::before {
-    content: '';
-    left: 0; 
-    right: 0; 
-    top: 0; 
-    bottom: 0; 
-    z-index: -1; 
-    background: var(--background);
-    /* background: url("../img-2/Shuuzo.png"); Путь к картинке */
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    position: fixed;
-    filter: var(--filter); /* Размытие картинки */
-  }
+/*body::before {*/
+/*    content: '';*/
+/*    left: 0; */
+/*    right: 0; */
+/*    top: 0; */
+/*    bottom: 0; */
+/*    z-index: -1; */
+/*    background: var(--background);*/
+/*    !* background: url("../img-2/Shuuzo.png"); Путь к картинке *!*/
+/*    background-repeat: no-repeat;*/
+/*    background-size: cover;*/
+/*    background-position: center;*/
+/*    position: fixed;*/
+/*    filter: var(--filter); !* Размытие картинки *!*/
+/*  }*/
 
 body, html{
     width: 100%;
@@ -89,7 +89,6 @@ body, html{
 }
 
 .container__{
-
     width: 55%;
     margin: auto;
     margin-bottom: 10px;
@@ -97,12 +96,9 @@ body, html{
 }
 
 .content{
-    /* border: 1px solid black; */
-    position: relative;
-    /*-webkit-backdrop-filter: blur( 9.5px );*/
+    width: 100vw;
     box-shadow: 0 6px 4px -4px rgba(0, 0, 0, .2);
     transition: 0.5s linear;
-    color: rgb(0, 0, 0);
     position: -webkit-sticky;
     position: sticky;
     top: 0px;

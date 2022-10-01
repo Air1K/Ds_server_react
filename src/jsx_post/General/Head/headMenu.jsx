@@ -100,7 +100,6 @@ const HeadMenu = () => {
                     </div>
                 </div>
             </div>
-
         </div>
     );
 };
