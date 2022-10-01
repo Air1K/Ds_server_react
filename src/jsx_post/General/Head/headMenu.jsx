@@ -56,7 +56,7 @@ const HeadMenu = () => {
                             <div className="switch-btn switch-on"></div>
                         </div>
 
-                        <img src={require("../../../img-2/head2.png")} alt=""></img>
+                        {/*<img src={require("../../../img-2/head2.png")} alt=""></img>*/}
                     </div>
                     <div className="enter">
                         {!store.isAuth ? (
