@@ -3,7 +3,7 @@
     pointer-events: auto;
 }
 
-.content *{
+html *{
     font-family: 'Conv_allercyrillic';
 }
 

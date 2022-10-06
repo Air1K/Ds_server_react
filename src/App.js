@@ -12,6 +12,7 @@ import Authorization from "./jsx_post/authorization/Authorization";
 import Comments from "./jsx_post/comments/Comments";
 import {Context} from "./index";
 import {observer} from "mobx-react-lite";
+import HeadFix from "./jsx_post/General/Head/HeadFix";
 
 
 function App() {
@@ -33,7 +34,8 @@ function App() {
 
 
             <BrowserRouter>
-                <HeadMenu/>
+                {/*<HeadMenu/>*/}
+                <HeadFix/>
                 <Cursor_aura/>
                 <Routes>
 
