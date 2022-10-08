@@ -4,25 +4,55 @@
   position: -webkit-sticky
   position: sticky
   top: 0
-  z-index: 4
+  z-index: 10
   backdrop-filter: blur(7px)
   display: flex
   justify-content: center
   align-items: center
   .bloc__menu
     position: relative
-    width: 80%
+    width: 60%
     height: 80%
-    background-color: #2bff00
+    //background-color: #2bff00
+    .menu__nav
+      font-size: 20px
+      position: absolute
+      top: 0
+      right: 100%
+      width: 25%
+      height: 100%
+      display: flex
+      align-items: center
+      justify-content: flex-start
+      .button__menu
+        padding: 0
+        border: none
+        font: inherit
+        color: inherit
+        background-color: transparent
+        transition: 0.5s
+      .button__menu:hover
+        color: #7bff00
+        transform: scale(1.6)
+        animation: anim_menu_visible 2s cubic-bezier(.25,1.09,.39,1)
     .enter__exit__menu
       position: absolute
       top: 0
       left: 100%
-      width: 10%
+      width: 30%
       height: 100%
+      display: flex
+      align-items: center
+      justify-content: flex-end
+      .container__enter
+        width: 50%
 
 
-
+@keyframes anim_menu_visible
+  0%
+    opacity: 1
+  100%
+    opacity: 0
 
 
 .container::after

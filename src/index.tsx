@@ -27,7 +27,8 @@ root.render(
     <Context.Provider value={{
         store
     }}>
-        {Device ? <App/> : <AppPhone/>}
+        <App/>
+        {/*{Device ? <App/> : <AppPhone/>}*/}
     </Context.Provider>
 );
 

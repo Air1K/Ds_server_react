@@ -13,7 +13,7 @@ import Comments from "./jsx_post/comments/Comments";
 import {Context} from "./index";
 import {observer} from "mobx-react-lite";
 import HeadFix from "./jsx_post/General/Head/HeadFix";
-
+import { useMediaQuery } from 'react-responsive'
 
 function App() {
     const {store} = useContext(Context)
@@ -29,14 +29,22 @@ function App() {
     //     console.log(store.isLoading)
     //     return <div>Загрузка...</div>
     // }
+    const isDesktopOrLaptop = useMediaQuery({
+        query: '(min-width: 890px)'
+    });
+    const isTabletOrMobile = useMediaQuery({ query: '(max-width: 890px)' });
+
+
     return (
         <div className="App">
 
 
             <BrowserRouter>
-                {/*<HeadMenu/>*/}
-                <HeadFix/>
-                <Cursor_aura/>
+                {isDesktopOrLaptop&&<HeadMenu/>}
+                {isDesktopOrLaptop&&<Cursor_aura/>}
+
+                {isTabletOrMobile&&<HeadFix/>}
+                {/**/}
                 <Routes>
 
                     <Route path="" element={<Home/>}/>

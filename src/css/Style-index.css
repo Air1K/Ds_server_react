@@ -119,8 +119,8 @@ body, html{
 .contents{
     
     
+    /*height: 5vw;*/
     height: 75px;
-    
     /* border: 1px solid black; */
     
 }
@@ -128,7 +128,6 @@ body, html{
     text-align: left;
     width: 25%;
     height: 75px;
-    margin: left;
     /* border: 1px solid black; */
     float: left;
 }
@@ -165,7 +164,7 @@ margin-top: 10px;
     height: 100%;
     width: 100%;
     display: flex;
-    /* float: left;  */
+    align-items: center;
 }
 
 .menu-top::before {
@@ -182,28 +181,23 @@ margin-top: 10px;
 .nav-menu-top{
     width: 90%;
     height: 80%;
-    margin: 9px 0 9px 0;
     align-items: center;
     vertical-align: middle;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     /* float: left; */
  
 }
 .menu-top a{
+    /*font-size: 1.2vw;*/
     font-size:125%;
-    margin: 0 15px;
-    
+    margin: 0 1.2vw;
 }
+
 
 .menu-top-left a{
     transition: 0.2s linear;
     text-align: center;
-}
-
-.menu-top-left{
-    margin-left: 80px;
-    
 }
 
 .menu-top-left a:hover{
@@ -269,12 +263,10 @@ margin-top: 10px;
 }
 
 .enter{
-    float: left;
     display: flex;
     flex-grow: 3;
-    padding: auto;
     text-align: center;
-    align-items: center;
+    align-items: flex-end;
     vertical-align: middle;
     flex-direction: column;
     justify-content: center;
@@ -360,12 +352,18 @@ margin-top: 10px;
     background: rgba(255, 255, 255, .2);
   }
 
+    .on_off_cursor{
+        font-size: 14px;
+    }
 
   .switch-btn {
     display: inline-block;
-    width: 40px; /* ширина */
-    height: 20px; /* высота */
-    border-radius: 19px; /* радиус скругления */
+    /*width: 2.5vw; !* ширина *!*/
+    /*height: 1.3vw; !* высота *!*/
+
+      width: 40px;
+      height: 20px;
+      border-radius: 19px; /* радиус скругления */
     background: #bfbfbf; /* цвет фона */
     z-index: 0;
     margin: 0;
@@ -378,12 +376,14 @@ margin-top: 10px;
   }
   .switch-btn::after {
     content: "";
-    height: 20px; /* высота кнопки */
-    width: 20px; /* ширина кнопки */
+      /*width: 1.3vw; !* ширина *!*/
+      /*height: 1.3vw; !* ширина кнопки *!*/
+      width: 20px; /* ширина */
+      height: 20px; /* ширина кнопки */
     border-radius: 17px;
     background: #fff; /* цвет кнопки */
-    top: 0px; /* положение кнопки по вертикали относительно основы */
-    left: 0px; /* положение кнопки по горизонтали относительно основы */
+    top: 0; /* положение кнопки по вертикали относительно основы */
+    left: 0; /* положение кнопки по горизонтали относительно основы */
     transition-duration: 300ms; /* анимация */
     position: absolute;
     z-index: 1;
