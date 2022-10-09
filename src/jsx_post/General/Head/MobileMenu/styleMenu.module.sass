@@ -10,24 +10,30 @@
   .content__menu
     width: 70%
     height: 100%
-    background-color: #18171c
+    background-color: rgba(24, 23, 28, 0.92)
+    backdrop-filter: blur(3px)
+    -webkit-backdrop-filter: blur(3px)
+    transform: translate(-100%, 0px)
+    transition: 0.3s
     .header
       height: 70px
       font-size: 24px
       display: flex
       align-items: flex-end
       justify-content: center
-      box-shadow: 0 6px 4px -4px rgba(0, 0, 0, .2)
-      backdrop-filter: blur(15px)
-      -webkit-backdrop-filter: blur(15px)
+      box-shadow: 0 6px 4px -4px rgba(0, 0, 0, 0.51)
 .container::after
   content: ""
   position: absolute
   z-index: -9
+  backdrop-filter: blur(2px)
+  -webkit-backdrop-filter: blur(2px)
   top: 0
   left: 0
   bottom: 0
   right: 0
   overflow: hidden
-  backdrop-filter: blur(3px)
-  -webkit-backdrop-filter: blur(3px)
+
+#content__menuOnClick
+  transform: translate(0%, 0px)
+  color: red
