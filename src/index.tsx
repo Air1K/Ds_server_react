@@ -1,5 +1,5 @@
 import React, {createContext} from 'react';
-import ReactDOM from 'react-dom/client';
+import { render } from "react-dom";
 import App from './App';
 import AppPhone from './AppPhone';
 import Store from "./store/store";
@@ -22,13 +22,13 @@ if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
     Device = true;
 }
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
+const root = document.getElementById("root");
+render(
     <Context.Provider value={{
         store
     }}>
         <App/>
         {/*{Device ? <App/> : <AppPhone/>}*/}
     </Context.Provider>
-);
+, root);
 
