@@ -14,6 +14,7 @@ import {Context} from "./index";
 import {observer} from "mobx-react-lite";
 import HeadFix from "./jsx_post/General/Head/HeadFix";
 import { useMediaQuery } from 'react-responsive'
+import FuterMobile from "./jsx_post/General/Futer/futerMobile/futerMobile";
 
 function App() {
     const {store} = useContext(Context)
@@ -30,9 +31,9 @@ function App() {
     //     return <div>Загрузка...</div>
     // }
     const isDesktopOrLaptop = useMediaQuery({
-        query: '(min-width: 890px)'
+        query: '(min-width: 980px)'
     });
-    const isTabletOrMobile = useMediaQuery({ query: '(max-width: 890px)' });
+    const isTabletOrMobile = useMediaQuery({ query: '(max-width: 980px)' });
 
 
     return (
@@ -54,7 +55,9 @@ function App() {
                     {/* <Route path="/donate" element={<Home />} /> */}
                     <Route path="login/*" element={<Authorization/>}/>
                 </Routes>
-                <Futer/>
+
+                {isDesktopOrLaptop&&<Futer/>}
+                {isTabletOrMobile&&<FuterMobile/>}
             </BrowserRouter>
 
         </div>

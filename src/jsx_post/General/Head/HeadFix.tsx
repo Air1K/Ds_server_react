@@ -25,9 +25,7 @@ const HeadFix = () => {
     return (
         <div className={styles.container}>
 
-            {
-                // @ts-ignore
-                isMenu&&<MobileMenu is = {isMenu} setIs = {setWindowMenu}/>}
+           <MobileMenu is = {isMenu} setIs = {setWindowMenu}/>
             <div className={styles.bloc__menu}>
                 <div className={styles.menu__nav}>
                     <button

@@ -7,6 +7,7 @@
   height: 100vh
   background-color: rgba(0, 0, 0, 0.66)
   display: flex
+  visibility: hidden
   .content__menu
     width: 70%
     height: 100%
@@ -17,11 +18,25 @@
     transition: 0.3s
     .header
       height: 70px
-      font-size: 24px
+      //font-size: 24px
+      //display: flex
+      //align-items: flex-end
+      //justify-content: center
+      box-shadow: 0 6px 4px -4px rgba(0, 0, 0, 0.51)
+      text-transform: uppercase
+      background-image: linear-gradient(-225deg, #231557 0%, #44107a 29%, #ff1361 67%, #fff800 100% )
+      background-size: auto auto
+      background-clip: border-box
+      background-size: 200% auto
+      color: #fff
+      text-fill-color: transparent
+      -webkit-background-clip: text
+      -webkit-text-fill-color: transparent
+      animation: textclip 2s linear infinite
       display: flex
       align-items: flex-end
       justify-content: center
-      box-shadow: 0 6px 4px -4px rgba(0, 0, 0, 0.51)
+      font-size: 30px
 .container::after
   content: ""
   position: absolute
@@ -37,3 +52,35 @@
 #content__menuOnClick
   transform: translate(0%, 0px)
   color: red
+
+.containers
+  visibility: visible
+
+.mav_menu *
+  color: white
+
+.mav_menu
+  width: 80%
+  margin: 5vh auto 0
+  .rooter
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    flex-wrap: nowrap
+    a
+      margin-bottom: 1vh
+  .on_off_cursor
+    position: absolute
+    bottom: 0
+    width: 80%
+    margin: 0 auto 5vh
+    color: yellow
+    display: flex
+    flex-direction: column
+    align-items: center
+
+@keyframes textclip
+  to
+    background-position: 200% center
+
