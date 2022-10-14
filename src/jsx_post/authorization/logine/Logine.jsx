@@ -97,6 +97,9 @@ const Logine = () => {
                     <div style={{opacity:'0.8' ,fontSize:'16px', color: "red", position: "absolute", top: '110%'}}><FontAwesomeIcon icon={faTriangleExclamation} /> {passwordError}</div>}
                 <input onChange={e => passwordHandler(e)} onBlur={e => blurHandler(e)} className='input2'  type="Password" name="password" id="password" placeholder="Password" />
             </div>
+            <div className="bottom_registr" style={{position: "relative", top: "-30px", padding: "0"}}>
+                <Link to="Recovery_password"  className="register_">Forgot password?</Link>
+            </div>
             <div className="conteiner_Log_reg">
                 <div className="buttom_div">
                     <Link to="" onClick={server} className="button8" >Login</Link>

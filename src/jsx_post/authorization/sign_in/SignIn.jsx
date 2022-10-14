@@ -6,6 +6,7 @@ import {registration} from '../../../actions/user.js';
 import {Context} from "../../../index";
 import {Navigate} from "react-router-dom";
 import {observer} from "mobx-react-lite";
+import Confirmation from "./confirmation/confirmation";
 
 
 const SignIn = () => {
@@ -14,7 +15,7 @@ const SignIn = () => {
 
     const [link_main, setLink_main] = useState(false);
 
-
+    const [confirmation_bool, setConfirmation_bool] = useState(false);
     const [name, setName] = useState(``);
     const [email, setEmail] = useState(``);
     const [username, setUsername] = useState(``);
@@ -125,10 +126,12 @@ const SignIn = () => {
         // console.log((nameError || emailError || usernameError || passwordError || repeat_passwordError));
         // console.log(nameError, emailError, usernameError, passwordError, repeat_passwordError);
 
-        if(!(nameError || emailError || usernameError || passwordError || repeat_passwordError)){
-             await store.registration(name, email, username, password);
-             await setLink_main(store.isAuth);
-        }
+         setConfirmation_bool(true)
+        // if(!(nameError || emailError || usernameError || passwordError || repeat_passwordError)){
+        //
+        //     await store.registration(name, email, username, password);
+        //      await setLink_main(store.isAuth);
+        // }
 
     }
 
@@ -139,6 +142,7 @@ const SignIn = () => {
     return (
 
         <div>
+
             <div className="autoriz-item">Sign Up</div>
             <div className="logo_dov">
                 <img className="Logo_fon" src={require("../../../img-2/NO-NLfon.png")} alt=""/>
@@ -184,6 +188,8 @@ const SignIn = () => {
 
                            name="repeat_password" id="repeat_password" placeholder="Repeat Password"/>
                 </div>
+                {confirmation_bool ? <Confirmation />:<div/>}
+
                 <div className="conteiner_Log_reg">
                     <div className="buttom_div">
                         {/* onClick={()=>} */}
