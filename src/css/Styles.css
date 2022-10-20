@@ -138,7 +138,7 @@ body {
 }
 
 .box-content {
-  background-color: rgb(24, 23, 28);
+  /*background-color: rgb(24, 23, 28);*/
   position: relative;
   z-index: 3;
   font-size: 21px;
@@ -152,7 +152,18 @@ body {
   width: 100%;
   height: 300px;
   background: linear-gradient(0deg, rgb(24, 23, 28) 18%, rgba(24, 23, 28, 0) 100%);
+
 }
+
+/*.box-content::after{*/
+/*  content: '';*/
+/*  position: fixed;*/
+/*  top: 0;*/
+/*  width: 100vw;*/
+/*  height: 100vh;*/
+/*  background-color: #2bff00;*/
+/*  z-index: -1;*/
+/*}*/
 
 .text-box {
   width: 90%;
@@ -177,7 +188,6 @@ body {
   margin: auto;
   width: -moz-fit-content;
   width: fit-content;
-  padding-top: 70px;
 }
 
 .uet > span {
@@ -187,8 +197,7 @@ body {
 }
 
 .info_serv_text {
-  overflow-y: hidden;
-  max-height: 100vw;
+  overflow: hidden;
   margin-top: 340px;
   padding-top: 50px;
   position: relative;
@@ -282,6 +291,7 @@ body {
   width: 30vw;
   height: 20vw;
   left: calc(50% - 800px);
+
 }
 .krug-osu .conthitcircleoverlay-1 {
   opacity: 0;
@@ -301,7 +311,7 @@ body {
   height: 100px;
   background-size: 100%;
   background-position: center;
-  position: absolute;
+  position: relative;
 }
 .krug-osu .conthitcircleoverlay-1 .sliderfollowcircle {
   background: url("../img-2/osu-krugi/sliderfollowcircle.png");
@@ -310,7 +320,7 @@ body {
   height: 100px;
   background-size: 100%;
   background-position: center;
-  position: absolute;
+  position: relative;
 }
 .krug-osu .conthitcircleoverlay-2 {
   opacity: 0;
@@ -325,7 +335,7 @@ body {
   height: 100px;
   background-size: 100%;
   background-position: center;
-  position: absolute;
+  position: relative;
 }
 .krug-osu .conthitcircleoverlay-2 .followpoint-2 {
   background: url("../img-2/osu-krugi/followpoint.png");
@@ -333,7 +343,7 @@ body {
   height: 14px;
   background-size: 100%;
   background-position: center;
-  position: absolute;
+  position: relative;
   transform: rotate(29deg);
   top: -40px;
   left: -240px;
@@ -345,7 +355,7 @@ body {
   height: 100px;
   background-size: 100%;
   background-position: center;
-  position: absolute;
+  position: relative;
 }
 .krug-osu .conthitcircleoverlay-3 {
   opacity: 0;
@@ -360,7 +370,7 @@ body {
   height: 100px;
   background-size: 100%;
   background-position: center;
-  position: absolute;
+  position: relative;
 }
 .krug-osu .conthitcircleoverlay-3 .followpoint-1 {
   background: url("../img-2/osu-krugi/followpoint.png");
@@ -368,7 +378,7 @@ body {
   height: 14px;
   background-size: 100%;
   background-position: center;
-  position: absolute;
+  position: relative;
   width: 300px;
   transform: rotate(-52deg);
   top: 170px;
@@ -381,7 +391,7 @@ body {
   height: 100px;
   background-size: 100%;
   background-position: center;
-  position: absolute;
+  position: relative;
 }
 
 ._sliderfollowcircle {
@@ -392,7 +402,7 @@ body {
   height: 100px;
   background-size: 100%;
   background-position: center;
-  position: absolute;
+  position: relative;
   animation: slider_zoom 1.2s forwards;
 }
 
@@ -418,7 +428,7 @@ body {
   height: 100px;
   background-size: 100%;
   background-position: center;
-  position: absolute;
+  position: relative;
   animation: slider_zoom1 1.2s forwards;
 }
 
@@ -444,7 +454,7 @@ body {
   height: 100px;
   background-size: 100%;
   background-position: center;
-  position: absolute;
+  position: relative;
   animation: slider_zoom2 1.2s forwards;
 }
 
@@ -460,6 +470,8 @@ body {
 }
 .contener-title {
   position: relative;
+  display: flex;
+  align-content: center;
 }
 
 .square-animation {

@@ -88,8 +88,8 @@ const Achive_blok = () => {
     const z4 = useTransform(scrollY, [2000, 3200], [150, -500]);
     return (
         <div>
-            <div className="begstrok">
-                <div className="text">
+            <div className="begstrok"style={{overflowX: "hidden"}}>
+                <div className="text" >
                     <h1>No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_No osu!-No Life_</h1>
                 </div>
             </div>

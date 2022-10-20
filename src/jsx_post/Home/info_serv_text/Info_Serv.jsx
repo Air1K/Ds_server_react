@@ -82,7 +82,7 @@ const Info_Serv = () => {
     return (
         <motion.div
             // viewport={{amount: 0.2}}
-            className="info_serv_text" style={{ overflow: 'visible' }}>
+            className="info_serv_text" >
             <motion.div
                 className="fon-mem"
                 style={{ y: y1 }}

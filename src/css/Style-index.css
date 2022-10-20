@@ -24,21 +24,21 @@ a{
     color: rgb(24,23,28)
 }
 
-/*body::before {*/
-/*    content: '';*/
-/*    left: 0; */
-/*    right: 0; */
-/*    top: 0; */
-/*    bottom: 0; */
-/*    z-index: -1; */
-/*    background: var(--background);*/
-/*    !* background: url("../img-2/Shuuzo.png"); Путь к картинке *!*/
-/*    background-repeat: no-repeat;*/
-/*    background-size: cover;*/
-/*    background-position: center;*/
-/*    position: fixed;*/
-/*    filter: var(--filter); !* Размытие картинки *!*/
-/*  }*/
+body::before {
+    content: '';
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+    background: var(--background);
+    /* background: url("../img-2/Shuuzo.png"); Путь к картинке */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: fixed;
+    filter: var(--filter); /* Размытие картинки */
+  }
 
 body, html{
     width: 100%;
