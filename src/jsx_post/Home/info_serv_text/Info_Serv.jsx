@@ -4,7 +4,7 @@ import {
     motion,
     useTransform,
 } from 'framer-motion';
-
+import styles from './stylesFonMem.module.sass'
 
 
 const Info_Serv = () => {
@@ -82,11 +82,13 @@ const Info_Serv = () => {
     return (
         <motion.div
             // viewport={{amount: 0.2}}
-            className="info_serv_text" >
+            className={`info_serv_text ${styles.info_serv_text}`} >
             <motion.div
-                className="fon-mem"
+                className={`fon-mem ${styles.imgClass}`}
                 style={{ y: y1 }}
-            />
+            >
+                <img src={require("../../../img-2/fon_mem.png")} alt=""/>
+            </motion.div>
             <div className="collum-1">
                 <motion.div
                     initial="hidden"

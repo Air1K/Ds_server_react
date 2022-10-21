@@ -24,12 +24,11 @@ const Container_1 = () => {
             </div>
             <div className={styles.mainBackgroundColor}>
                 <div className="text-box clearfix">
-                    <br/><br/><br/><br/>
                     <Info_Serv />
                     <Achive_blok />
                     <Komponent />
-                    {/*<Admin_info />*/}
-                    {/*<Vstup_blok />*/}
+                    <Admin_info />
+                    <Vstup_blok />
                 </div>
             </div>
         </section>
