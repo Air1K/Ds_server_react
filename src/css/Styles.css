@@ -91,29 +91,39 @@ body {
 }
 
 .img-logo-1 {
-  background: url("../img-2/NO-NLfon.png");
-  width: 1000px;
-  height: 100px;
+  /*background: url("../img-2/NO-NLfon.png");*/
+  width: 70vw;
   background-size: 100%;
   background-position: center;
   position: relative;
   z-index: 2;
   margin: auto;
-  top: calc(50% - 50px);
+  top: 41vh;
+  /*top: calc(50% - 50px);*/
 }
 
 .img-logo-2 {
-  background: url("../img-2/NO-NLbac.png");
-  width: 1000px;
-  height: 100px;
+  width: 70vw;
   background-size: 100%;
   background-position: center;
   position: relative;
-  top: calc(50% - 130px);
+  /*top: calc(50% - 180px);*/
+  top: 28vh;
   z-index: 1;
   margin: auto;
   opacity: 1;
   filter: blur(3px);
+}
+
+.img-logo-1 > img{
+  width: 100%;
+  position: relative;
+  top: 0
+}
+.img-logo-2 > img{
+  width: 100%;
+  position: relative;
+  top:0
 }
 
 .logods {
@@ -174,13 +184,14 @@ body {
   z-index: 10;
   color: #fff;
   position: relative;
-  text-align: justify;
+  text-align: left;
   text-shadow: #e0e0e0 1px 1px 5px;
 }
 .text-box h1 {
   font-size: 3vw;
   font: "tahoma";
   font-weight: 900;
+  text-align: center;
 }
 .text-box .title-1 {
   position: relative;
@@ -191,13 +202,13 @@ body {
 }
 
 .uet > span {
-  font-size: 3vw;
+  font-size: calc(27px + 25 * 100vw/1920);
   font-weight: 900;
   text-shadow: #e0e0e0 3px 3px 5px;
 }
 
 .info_serv_text {
-  overflow: hidden;
+  overflow-y: visible;
 
   position: relative;
   display: flex;
@@ -221,7 +232,7 @@ body {
 
 .content-1 {
   /* opacity: 0; */
-  max-width: 60%;
+  max-width: 40vw;
   position: relative;
   transition:  cubic-bezier(.45,.15,.32,1.13) opacity;
 }
@@ -229,7 +240,7 @@ body {
 .content-2 {
   margin-top: 70%;
   /* opacity: 0; */
-  max-width: 60%;
+  max-width: 40vw;
   position: relative;
   transition:  cubic-bezier(.45,.15,.32,1.13) opacity;
 }
@@ -237,7 +248,7 @@ body {
 .content-3 {
   margin-top: 40%;
   /* opacity: 0; */
-  max-width: 60%;
+  max-width: 40vw;
   position: relative;
   transition:  cubic-bezier(.45,.15,.32,1.13) opacity;
 }
@@ -245,7 +256,7 @@ body {
 .content-4 {
   margin-top: 70%;
   /* opacity: 0; */
-  max-width: 60%;
+  max-width: 40vw;
   position: relative;
   transition:  cubic-bezier(.45,.15,.32,1.13) opacity;
 }
@@ -262,23 +273,20 @@ body {
   left: 20px;
   /* opacity: 0; */
   width: 100%;
-  height: 50px;
+  height: 80%;
   transition: cubic-bezier(.45,.15,.32,1.13) transform;
 }
 
-.fon-mem {
-  /*background: url("../img-2/fon_mem.png");*/
-  /*width: 1200px;*/
-  /*height: 750px;*/
-  margin-top: 100px;
-  background-size: 100%;
-  background-position: center;
-  position: absolute;
-  z-index: 1;
-  opacity: 0.3;
-  transform: translateY(-170px);
-  transition: all 0.15s cubic-bezier(0.12, 0.76, 0.17, 0.97);
-}
+/*.fon-mem {*/
+/*  margin-top: 100px;*/
+/*  background-size: 100%;*/
+/*  background-position: center;*/
+/*  position: absolute;*/
+/*  z-index: 1;*/
+/*  opacity: 0.3;*/
+/*  transform: translateY(-170px);*/
+/*  transition: all 0.15s cubic-bezier(0.12, 0.76, 0.17, 0.97);*/
+/*}*/
 
 
 .collum-1, .collum-2 {
@@ -930,4 +938,23 @@ svg path{
 
 .parallax_{
   min-height: 100vh;
+}
+
+@media screen and (max-width: 980px){
+  .content-3 {
+    margin-top: 70%;
+    /* opacity: 0; */
+    max-width: 40vw;
+    position: relative;
+    transition:  cubic-bezier(.45,.15,.32,1.13) opacity;
+  }
+  .img-logo-1, .img-logo-2{
+    width: 90vw;
+  }
+  .img-logo-1{
+    top: 40vh;
+  }
+  .img-logo-2{
+    top: 34vh;
+  }
 }

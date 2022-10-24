@@ -3,8 +3,24 @@
 
 .imgClass
   margin: auto
+
   img
-    width: 100vw
+    width: 80vw
+    z-index: 9
+
+.fonMem
+  background-size: 100%
+  background-position: center
+  position: absolute
+  z-index: 1
+  opacity: 0.3
+  transform: translateY(-170px)
+  transition: 0.5s cubic-bezier(0.12, 0.76, 0.17, 0.97)
+  margin-left: auto
+  margin-right: auto
+  left: 0
+  right: 0
+  text-align: center
 
 @media screen and (max-width: 980px)
   .info_serv_text

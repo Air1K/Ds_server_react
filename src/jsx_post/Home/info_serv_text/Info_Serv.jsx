@@ -1,10 +1,11 @@
-import React from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {
     useViewportScroll,
     motion,
     useTransform,
 } from 'framer-motion';
 import styles from './stylesFonMem.module.sass'
+import {useMediaQuery} from "react-responsive";
 
 
 const Info_Serv = () => {
@@ -69,9 +70,32 @@ const Info_Serv = () => {
 
     }
 
+    const isDesktopOrLaptop = useMediaQuery({
+        query: '(min-width: 980px)'
+    });
+    const isTabletOrMobile = useMediaQuery({ query: '(max-width: 980px)' });
 
+    const windowInnerHeight = window.innerHeight;
+    const ref = useRef();
+    const [topEl, setTopEl] = useState(100);
+    const [bottomEl, setBottomEl] = useState(100);
+    useEffect(() => {
+        var rect = ref.current.getBoundingClientRect();
+        setTopEl(rect.top)
+        setBottomEl(rect.bottom)
+        console.log(rect);
+    });
+
+    if(isDesktopOrLaptop){
+        var height1 = windowInnerHeight;
+        var height2 = -windowInnerHeight+200;
+    }
+    if(isTabletOrMobile){
+        var height1 = 250;
+        var height2 = -0;
+    }
     const { scrollY } = useViewportScroll();
-    const y1 = useTransform(scrollY, [1000, 2200], [250, -500]);
+    const y1 = useTransform(scrollY, [(topEl-(topEl/2)), (bottomEl)], [height1, height2]);
 
 
 
@@ -82,12 +106,14 @@ const Info_Serv = () => {
     return (
         <motion.div
             // viewport={{amount: 0.2}}
+            ref={ref}
             className={`info_serv_text ${styles.info_serv_text}`} >
             <motion.div
-                className={`fon-mem ${styles.imgClass}`}
+                viewport={{ amount: 0.2 }}
+                className={`${styles.fonMem} ${styles.imgClass}`}
                 style={{ y: y1 }}
             >
-                <img src={require("../../../img-2/fon_mem.png")} alt=""/>
+                <img style={{marginTop: 0}} src={require("../../../img-2/fon_mem.png")} alt=""/>
             </motion.div>
             <div className="collum-1">
                 <motion.div

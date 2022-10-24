@@ -8,7 +8,7 @@ html *{
 }
 
 .box-content *{
-    font: 700 normal 1em 'tahoma';
+    font: 700 normal calc(14px + 10 * (100vw / 1920)) 'tahoma';
 }
 
 @font-face {
