@@ -2,9 +2,11 @@
 
 # dependencies
 /node_modules
+/bild
 /.pnp
 .pnp.js
-
+node_modules
+bild
 # testing
 /coverage
 
