@@ -15,6 +15,7 @@ import {observer} from "mobx-react-lite";
 import HeadFix from "./jsx_post/General/Head/HeadFix";
 import { useMediaQuery } from 'react-responsive'
 import FuterMobile from "./jsx_post/General/Futer/futerMobile/futerMobile";
+import CursorAndAura from "./jsx_post/cursorAndAura";
 
 function App() {
     const {store} = useContext(Context)
@@ -42,8 +43,7 @@ function App() {
 
             <BrowserRouter>
                 {isDesktopOrLaptop&&<HeadMenu/>}
-                {isDesktopOrLaptop&&<Cursor_aura/>}
-
+                {isDesktopOrLaptop&&<CursorAndAura/>}
                 {isTabletOrMobile&&<HeadFix/>}
                 {/**/}
                 <Routes>

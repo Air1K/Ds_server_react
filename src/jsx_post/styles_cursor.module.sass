@@ -1,0 +1,57 @@
+//.container
+//  transform: scale(1)
+  //transition: 0.2s
+
+//a:hover .container
+//  transform: scale(1)
+
+.box_cursor
+  width: 76px
+  height: 76px
+  border-radius: 50%
+  position: fixed
+  z-index: 9999
+  pointer-events: none
+  //animation-name: anime_aura
+  //animation-duration: 5s
+  //animation-iteration-count: infinite
+  //animation-timing-function: linear
+
+.anim_div_rotate
+  width: 100%
+  height: 100%
+  pointer-events: none
+  animation-name: anime_aura
+  animation-duration: 5s
+  animation-iteration-count: infinite
+  animation-timing-function: linear
+
+
+
+
+.box_cursor_aura
+  position: relative
+  width: 100%
+  height: 100%
+  pointer-events: none
+  background: url("../cursor/mucursor.png")
+
+a:hover + .box_cursor_aura
+  //transform: scale(2)
+  background-color: #3f4348
+
+@keyframes anime_aura
+  0%
+    transform: rotate(0deg)
+  100%
+    transform: rotate(360deg)
+
+
+body
+  cursor: url("../cursor/cursormiddle.png") 16 16, auto
+
+//  width: 32px
+//  height: 32px
+//  background-image: url("../cursor/cursormiddle.png")
+  //background-repeat: no-repeat
+  //background-position: center center
