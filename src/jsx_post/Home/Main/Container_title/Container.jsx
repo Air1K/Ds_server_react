@@ -46,7 +46,7 @@ const Container = () => {
         <motion.div
         initial ="hidden"
         whileInView={"visible"}
-        viewport={{amount: 0.2}}
+        viewport={{amount: 0.2, once: true}}
         className="contener-title">
             <div className="title-1">
                 <motion.h1 custom ={0.5} variants={textAnim} className="uet ue">

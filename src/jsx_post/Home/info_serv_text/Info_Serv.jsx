@@ -119,7 +119,7 @@ const Info_Serv = () => {
                 <motion.div
                     initial="hidden"
                     whileInView={"visible"}
-                    viewport={{ amount: 0.2 }}
+                    viewport={{ amount: 0.2, once: true }}
                     className="content-1">
                     <motion.p custom={1} variants={AnimcssLeft} className="cont-1-p">
 
@@ -130,7 +130,7 @@ const Info_Serv = () => {
                 <motion.div
                     initial="hidden"
                     whileInView={"visible"}
-                    viewport={{ amount: 0.2 }}
+                    viewport={{ amount: 0.2, once: true }}
                     className="content-2">
                     <motion.p custom={1} variants={AnimcssLeft} className="cont-2-p">
                         Принимать участия в различных конкурсах и турнирах внутри сервера
@@ -143,7 +143,7 @@ const Info_Serv = () => {
                 <motion.div
                     initial="hidden"
                     whileInView={"visible"}
-                    viewport={{ amount: 0.2 }}
+                    viewport={{ amount: 0.2, once: true }}
                     className="content-3">
                     <motion.p custom={1} variants={AnimcssRight} className="cont-3-p">
                         Смотреть аниме в компании добрых и адекватных людей
@@ -154,7 +154,7 @@ const Info_Serv = () => {
                 <motion.div
                     initial="hidden"
                     whileInView={"visible"}
-                    viewport={{ amount: 0.2 }}
+                    viewport={{ amount: 0.2, once: true }}
                     className="content-4">
                     <motion.p custom={1} variants={AnimcssRight} className="cont-4-p">
                         Общаться с добрыми админами и даже найти девушку :)
