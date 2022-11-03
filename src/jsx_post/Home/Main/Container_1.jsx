@@ -25,7 +25,7 @@ const Container_1 = () => {
             <div className={styles.mainBackgroundColor}>
                 <div className="text-box clearfix">
                     <Info_Serv />
-                    <Achive_blok />
+                    {/*<Achive_blok />*/}
                     <Komponent />
                     <Admin_info />
                     <Vstup_blok />

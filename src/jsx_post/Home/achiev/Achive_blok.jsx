@@ -7,85 +7,12 @@ import {
 
 import './style.sass'
 
-    
+
 
 
 
 
 const Achive_blok = () => {
-
-    const AnimcssRight = {
-        hidden: {
-            scale: 2,
-            x: -600,
-            opacity: 0,
-        },
-        visible: custom => ({
-            x: 0,
-            scale: 1,
-            opacity: 1,
-            transition: { delay: custom * 0.2 }
-        }),
-
-    }
-
-    const AnimcssLeft = {
-        hidden: {
-            scale: 2,
-            x: 600,
-            opacity: 0,
-        },
-        visible: custom => ({
-            x: 0,
-            scale: 1,
-            opacity: 1,
-            transition: { delay: custom * 0.2 }
-        }),
-
-    }
-
-    const AnimcssRightBox = {
-        hidden: {
-            scale: 2,
-            x: 600,
-            opacity: 0,
-        },
-        visible: custom => ({
-            x: 0,
-            scale: 1,
-            opacity: 1,
-            transition: { delay: custom * 0.2 }
-        }),
-
-    }
-
-    const AnimcssLeftBox = {
-        hidden: {
-            scale: 2,
-            x: -600,
-            opacity: 0,
-        },
-        visible: custom => ({
-            x: 0,
-            scale: 1,
-            opacity: 0.7,
-            transition: { delay: custom * 0.2 }
-        }),
-
-    }
-
-
-    const { scrollY } = useViewportScroll();
-    const y1 = useTransform(scrollY, [2450, 3800], [250, -500]);
-    const y2 = useTransform(scrollY, [2850, 3900], [150, -500]);
-    const y3 = useTransform(scrollY, [3250, 4300], [250, -500]);
-    const y4 = useTransform(scrollY, [3850, 4900], [350, -100]);
-
-
-    const z1 = useTransform(scrollY, [2000, 3200], [150, -200]);
-    const z2 = useTransform(scrollY, [2000, 3200], [250, -500]);
-    const z3 = useTransform(scrollY, [2000, 3200], [350, -300]);
-    const z4 = useTransform(scrollY, [2000, 3200], [150, -500]);
     return (
         <div>
             <div className="begstrok"style={{overflowX: "hidden"}}>

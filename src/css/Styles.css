@@ -188,10 +188,10 @@ body {
   text-shadow: #e0e0e0 1px 1px 5px;
 }
 .text-box h1 {
-  font-size: 3vw;
+  font-size: 18px;
   font: "tahoma";
   font-weight: 900;
-  text-align: center;
+  text-align: left;
 }
 .text-box .title-1 {
   position: relative;
@@ -578,8 +578,7 @@ span {
 
 .dostig-h1 {
   margin-left: 8%;
-  margin-top: 200px;
-  margin-bottom: 200px;
+  margin-bottom: 13%;
 }
 
 .content-top-tt-koll1-el1, .content-top-tt-koll1-el2, .content-top-tt-koll2-el1, .content-top-tt-koll2-el2 {
@@ -642,8 +641,9 @@ span {
   animation: strokanim 300s linear infinite alternate;
 }
 .begstrok .text h1 {
+  margin: 5vw 0;
   color: rgb(24, 23, 28);
-  font-size: 150px;
+  font-size: 9vh;
   text-shadow: 0 -1px 2px #FFFFFF, 0 -1px 2px #FFFFFF, 0 1px 2px #FFFFFF, 0 1px 2px #FFFFFF, -1px 0 2px #FFFFFF, 1px 0 2px #FFFFFF, -1px 0 2px #FFFFFF, 1px 0 2px #FFFFFF, -1px -1px 2px #FFFFFF, 1px -1px 2px #FFFFFF, -1px 1px 2px #FFFFFF, 1px 1px 2px #FFFFFF, -1px -1px 2px #FFFFFF, 1px -1px 2px #FFFFFF, -1px 1px 2px #FFFFFF, 1px 1px 2px #FFFFFF;
 }
 

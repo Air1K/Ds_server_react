@@ -16,10 +16,6 @@ const Comments = () => {
 
     const [link_main, setLink_main] = useState(false);
 
-    var style = document.querySelector('body').style;
-    var style_strok = 'url()';
-    style.setProperty('--background', style_strok);
-    style.setProperty('--filter', 'blur(5px)');
     const [comment_post_get, setComment_post_get] = useState([])
     const [lov, setLov] = useState([])
     const [massComment, setMassComment] = useState([]);

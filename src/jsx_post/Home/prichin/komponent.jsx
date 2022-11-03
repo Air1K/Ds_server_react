@@ -66,7 +66,7 @@ const Komponent = () => {
 
 	return (
 		<div className="prichin-section" style={{overflow:"hidden"}}>
-			<h1 style={{ margin: '0px 0 100px 0', marginLeft: ' 8%' }}>Причины чтобы посетить наш сервер</h1>
+			<h1 style={{ margin: "30% 8% 10% 8%" }}>Причины чтобы посетить наш сервер</h1>
 			<div className="window_prich">
 
 				<div className="spisok_prich">
