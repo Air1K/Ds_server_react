@@ -955,6 +955,11 @@ svg path{
     position: relative;
     transition:  cubic-bezier(.45,.15,.32,1.13) opacity;
   }
+
+  .text-box {
+    padding: 0;
+  }
+
   .img-logo-1, .img-logo-2{
     width: 90vw;
   }
