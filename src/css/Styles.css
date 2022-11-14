@@ -183,6 +183,7 @@ body {
 
 .text-box {
   max-width: 1425px;
+  padding: 0 calc(100px + (0 - 100) * ((100vw - 320px) / (1425 - 320)));
   height: 100%;
   margin: auto;
 }
