@@ -1,39 +1,22 @@
 import React, {useState, useEffect, useContext} from 'react';
 import "./style.sass"
-import {comment} from "../../actions/comment";
-import {comment_get} from "../../actions/commentGet";
-import {useDispatch, useSelector} from "react-redux";
-import axios from "axios";
-import {login_user} from "../../actions/login";
-import {IComments} from "../../models/IComments";
 import CommentService from "../../services/CommentService";
 import {Context} from "../../index";
-import {Navigate} from "react-router-dom";
 import {API_URL} from "../../http";
 
 const Comments = () => {
     const {store} = useContext(Context);
-
-    const [link_main, setLink_main] = useState(false);
-
-    const [comment_post_get, setComment_post_get] = useState([])
-    const [lov, setLov] = useState([])
     const [massComment, setMassComment] = useState([]);
 
 
     async function connectComments() {
         try {
-            // const response = await CommentService.fetchComments();
             const eventSource = new EventSource(`${API_URL}/connect`)
             eventSource.onmessage = function (event) {
                 const message = JSON.parse(event.data);
-                // let reversed = [...message].reverse();
                 setMassComment(prev => [message, ...prev]);
                 console.log(message);
             }
-            // console.log(response);
-            // let reversed = [...response.data].reverse();
-            // setMassComment(reversed);
         } catch (e) {
             console.log(e);
         }
@@ -57,11 +40,6 @@ const Comments = () => {
     }, []);
 
     const [comment_text, setComment_text] = useState('')
-
-
-
-    const obj_locUS = localStorage.getItem('user')
-    const json_pars = JSON.parse(obj_locUS);
 
     async function PostComment() {
         try {
