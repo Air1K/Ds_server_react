@@ -97,8 +97,8 @@ body {
   background-position: center;
   position: relative;
   z-index: 2;
-  margin: auto;
-  top: 41vh;
+  /*margin: auto;*/
+  /*top: 41vh;*/
   /*top: calc(50% - 50px);*/
 }
 
@@ -106,11 +106,12 @@ body {
   width: 70vw;
   background-size: 100%;
   background-position: center;
-  position: relative;
+  position: absolute;
   /*top: calc(50% - 180px);*/
-  top: 28vh;
-  z-index: 1;
-  margin: auto;
+  /*top: 1vh;*/
+  z-index: -1;
+  top: 23px;
+  /*margin: auto;*/
   opacity: 1;
   filter: blur(3px);
 }
@@ -127,14 +128,19 @@ body {
 }
 
 .logods {
-  height: 100vh;
-  width: 100%;
+  display: flex;
   position: fixed;
+  width: 100vw;
+  height: 100vh;
   z-index: 2;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
+  align-items: center;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
 }
 
 .divs {
@@ -176,7 +182,7 @@ body {
 /*}*/
 
 .text-box {
-  width: 90%;
+  max-width: 1425px;
   height: 100%;
   margin: auto;
 }
@@ -188,7 +194,7 @@ body {
   text-shadow: #e0e0e0 1px 1px 5px;
 }
 .text-box h1 {
-  font-size: 18px;
+  font-size: calc(20px + (30 - 20) * ((100vw - 320px) / (1425 - 320)));
   font: "tahoma";
   font-weight: 900;
   text-align: left;
@@ -951,10 +957,8 @@ svg path{
   .img-logo-1, .img-logo-2{
     width: 90vw;
   }
-  .img-logo-1{
-    top: 40vh;
-  }
+
   .img-logo-2{
-    top: 34vh;
+    top: 9px;
   }
 }

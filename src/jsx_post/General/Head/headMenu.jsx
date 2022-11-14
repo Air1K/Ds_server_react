@@ -5,7 +5,6 @@ import {Link} from "react-router-dom";
 import './styleHead.sass'
 import {Context} from "../../../index";
 import {observer} from "mobx-react-lite";
-const logout = require ('../../../actions/logout');
 
 
 // async function Locsl_chek() {

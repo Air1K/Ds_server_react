@@ -60,10 +60,11 @@ const Logojs = () => {
             <div className="logods">
                 <div className="img-logo-1">
                     <img src={require("../../../img-2/NO-NLfon.png")} alt=""/>
+                    <div className="img-logo-2">
+                        <img src={require("../../../img-2/NO-NLbac.png")} alt=""/>
+                    </div>
                 </div>
-                <div className="img-logo-2">
-                    <img src={require("../../../img-2/NO-NLbac.png")} alt=""/>
-                </div>
+
                 <a href="https://discord.gg/xcrfrJ5QsN" className="border-button">Присоединиться</a>
             </div>
         </section>

@@ -98,7 +98,7 @@ body, html{
 .content{
     width: 100vw;
     box-shadow: 0 6px 4px -4px rgba(0, 0, 0, .2);
-    transition: 0.5s linear;
+    /*transition: 0.5s linear;*/
     position: -webkit-sticky;
     position: sticky;
     top: 0px;
@@ -300,10 +300,10 @@ margin-top: 10px;
     text-decoration: none;
     display: inline-block;
     padding: 20px 30px;
-    margin: auto;
+    margin-top: 50px;
     position: relative;
-    top: calc(50% - 120px);
-    left: calc(50% - 100px);
+    /*top: calc(50% - 120px);*/
+    /*left: calc(50% - 100px);*/
     text-shadow: #494949 1px 1px 5px;
     color: white;
     border: 1px solid rgba(255, 255, 255, .4);

@@ -2,7 +2,6 @@ import React, {useContext, useEffect, useState} from 'react';
 import { faTriangleExclamation } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import './style.sass'
-import {registration} from '../../../actions/user.js';
 import {Context} from "../../../index";
 import {Navigate} from "react-router-dom";
 import {observer} from "mobx-react-lite";

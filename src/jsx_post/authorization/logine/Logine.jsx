@@ -1,6 +1,5 @@
 import React, {useContext, useEffect, useState} from 'react';
 import { Link, Navigate} from 'react-router-dom';
-import {login_user} from "../../../actions/login";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faTriangleExclamation} from "@fortawesome/free-solid-svg-icons";
 import {Context} from "../../../index";
