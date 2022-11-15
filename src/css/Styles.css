@@ -672,6 +672,7 @@ span {
   flex-flow: row nowrap;
   justify-content: space-around;
   align-items: center;
+  flex-direction: row;
 }
 
 .mem-kach {
@@ -955,7 +956,13 @@ svg path{
     position: relative;
     transition:  cubic-bezier(.45,.15,.32,1.13) opacity;
   }
-
+  .window_prich {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+  }
   .text-box {
     padding: 0;
   }
