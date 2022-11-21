@@ -832,7 +832,7 @@ svg path{
 }
 .vstup_block * {
   color: #ffffff;
-  font: 700 normal 1em "tahoma";
+  font: 700 normal calc(14px + 10 * (100vw / 1920)) "tahoma";
   text-align: justify;
 }
 .vstup_block * .bottom_add_admin {
@@ -967,4 +967,13 @@ svg path{
   .img-logo-2{
     top: 9px;
   }
+
+  .vstup_block .sekt_inf {
+    flex-direction: column;
+
+  }
+  .bottom_add_admin{
+    margin: 4vh 0;
+  }
+
 }
