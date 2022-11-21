@@ -806,7 +806,7 @@ span {
   justify-content: space-between;
   align-items: center;
   background-color: rgba(255, 255, 255, 0.0392156863);
-  padding: 40px;
+  padding: calc(20px + (40 - 20) * ((100vw - 320px) / (1200 - 320)));;
   width: 100%;
 }
 .vstup_block .sekt_inf a {
@@ -827,18 +827,15 @@ svg path{
 .vstup_block .sekt_inf a:hover svg path{
   color: green;
 }
-.vstup_block .sekt_inf .text-info {
-  width: 80%;
-}
-.vstup_block * {
+.vstup_block *{
   color: #ffffff;
-  font: 700 normal calc(14px + 10 * (100vw / 1920)) "tahoma";
+  font: 700 normal calc(14px + (20 - 14) * (100vw / 1200)) "tahoma";
   text-align: justify;
 }
 .vstup_block * .bottom_add_admin {
   text-transform: uppercase;
   text-align: left;
-  width: 17%;
+  /*width: 17%;*/
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -954,7 +951,7 @@ svg path{
   }
 
   .text-box {
-    padding: 0 calc(30px + (90 - 100) * ((100vw - 320px) / (1920 - 320)));
+    padding: 0 calc(20px + (90 - 100) * ((100vw - 320px) / (1920 - 320)));
 
   }
   .uet > span {
@@ -975,5 +972,7 @@ svg path{
   .bottom_add_admin{
     margin: 4vh 0;
   }
-
+  .bottom_add_admin * {
+    font-size: calc(20px + (90 - 100) * ((100vw - 320px) / (1920 - 320)));
+  }
 }
