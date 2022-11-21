@@ -49,7 +49,7 @@ const Container = () => {
         viewport={{amount: 0.2, once: true}}
         className="contener-title">
             <div className="title-1">
-                <motion.h1 custom ={0.5} variants={textAnim} className="uet ue" style={{textAlign: "center"}}>
+                <motion.h1 custom ={0.5} variants={textAnim} className="uet ue" style={{textAlign: 'center', padding: '10vh 0'}}>
                     <span>Добро</span> <span>пожаловать</span> <span>на</span> <span>сервер</span>  <span className="bold"> No </span> <span className="bold"> osu!-No </span> <span className="bold">Life</span>
                 </motion.h1>
             </div>

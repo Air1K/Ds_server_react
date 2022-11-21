@@ -4,7 +4,7 @@ import styles from './styleAdminInfo.module.sass'
 const Admin_info = () => {
     return (
         <div className={`admininfo ${styles.admininfo}`}>
-                    <h1 style={{margin: '200px 0 100px 0', marginLeft: '8%'}}>Наша команда</h1>
+                    <h1 style={{margin: '30% 0px 10%', marginLeft: '8%'}}>Наша команда</h1>
                     <div className="sekt_inf">
                         <div className="block">
                             <div className="image_user">

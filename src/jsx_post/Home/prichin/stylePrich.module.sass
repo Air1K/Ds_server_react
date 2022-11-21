@@ -1,0 +1,31 @@
+.window_prich
+  display: flex
+  flex-flow: row nowrap
+  justify-content: space-between
+  align-items: center
+
+
+.main
+  width: 50%
+  margin: auto 0
+  *img
+    width: 100%
+
+.img
+  position: relative
+  z-index: 2
+
+.blur_img
+  position: absolute
+  top: 0
+  left: 0
+  z-index: 1
+  filter: blur(30px)
+  overflow: visible
+
+@media screen and (max-width: 980px)
+  .window_prich
+    flex-direction:  column
+  .main
+    margin: 5vh 0
+    width: 80%
