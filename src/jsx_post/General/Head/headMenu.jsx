@@ -5,15 +5,15 @@ import {Link} from "react-router-dom";
 import './styleHead.sass'
 import {Context} from "../../../index";
 import {observer} from "mobx-react-lite";
-
-
+import {motion} from "framer-motion";
+import styles from './styleHead.module.sass'
 // async function Locsl_chek() {
 //     const obj_locUS = await localStorage.getItem('user')
 //     const json_pars = await JSON.parse(obj_locUS);
 //     return json_pars;
 // }
 
-const HeadMenu = () => {
+const HeadMenu = ({setCursorState}) => {
 
     const {store} = useContext(Context);
 
@@ -38,6 +38,18 @@ const HeadMenu = () => {
         setMenuuser(false);
     }, [store.isAuth])
 
+    const [isOn, setIsOn] = useState(false);
+
+    useEffect(()=>{
+        setCursorState(!isOn)
+    }, [isOn])
+
+    const toggleSwitch = () => setIsOn(!isOn);
+    const spring = {
+        type: "spring",
+        stiffness: 700,
+        damping: 30
+    };
     return (
         <div className="content ">
             <div className="contents">
@@ -52,7 +64,12 @@ const HeadMenu = () => {
                         </div>
                         <div className="on_off_cursor">
                             Вкл / вкл курсор
-                            <div className="switch-btn switch-on"></div>
+                            <div className={styles.switch} data-isOn={isOn} onClick={toggleSwitch}>
+                                <div className={isOn?styles.area:`${styles.area} ${styles.areaOnclik}`}>
+
+                                </div>
+                                <motion.div className={styles.handle} layout transition={spring} />
+                            </div>
                         </div>
 
                         {/*<img src={require("../../../img-2/head2.png")} alt=""></img>*/}

@@ -941,6 +941,10 @@ svg path{
   min-height: 100vh;
 }
 
+.ingContainer{
+
+}
+
 @media screen and (max-width: 980px){
   .content-3 {
     margin-top: 70%;

@@ -1,11 +1,13 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { useRef } from "react";
 import { motion } from "framer-motion";
 import { useFollowPointer } from "../hooks/cursor_hooks";
 import styles from './styles_cursor.module.sass'
 const CursorAndAura = () => {
+
     const ref = useRef(null);
     const { x, y } = useFollowPointer(ref);
+
 
     return (
             <motion.div

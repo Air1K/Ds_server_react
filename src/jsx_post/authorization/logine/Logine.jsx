@@ -1,10 +1,10 @@
 import React, {useContext, useEffect, useState} from 'react';
-import { Link, Navigate} from 'react-router-dom';
+import {Link, Navigate} from 'react-router-dom';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faTriangleExclamation} from "@fortawesome/free-solid-svg-icons";
 import {Context} from "../../../index";
 import {observer} from "mobx-react-lite";
-
+import styles_img from './stules_login_form.module.sass'
 
 
 const Logine = () => {
@@ -58,10 +58,9 @@ const Logine = () => {
     }
 
 
+    async function server() {
 
-    async function server(){
-
-        if(!(emailError || passwordError)){
+        if (!(emailError || passwordError)) {
             await store.login(email, password);
             await setLink_main(store.isAuth);
             //  const obj_user = await login_user(email, password);
@@ -75,39 +74,43 @@ const Logine = () => {
 
     }
 
-    useEffect(()=>{
+    useEffect(() => {
         store.setMessages('');
-    },[])
+    }, [])
 
     return (
         <div>
             <div className="autoriz-item">Welcome</div>
             <div className="logo_dov">
-                <img className="Logo_fon" src={require("../../../img-2/NO-NLfon.png")} alt="" />
-                <img className="Logo_bac" src={require("../../../img-2/NO-NLbac.png")} alt="" />
+                <img className="Logo_fon" src={require("../../../img-2/NO-NLfon.png")} alt=""/>
+                <img className="Logo_bac" src={require("../../../img-2/NO-NLbac.png")} alt=""/>
             </div>
             <div className="input_log_div">
                 {(emailDirtu && emailError) &&
-                    <div style={{opacity:'0.8' ,fontSize:'16px', color: "red", position: "absolute", top: '110%'}}><FontAwesomeIcon icon={faTriangleExclamation} /> {emailError}</div>}
-                <input onBlur={e => blurHandler(e)} onChange={e => emailHandler(e)} value={email} className='input1'  type="text" name="email" id="email" placeholder="Email" />
+                    <div style={{opacity: '0.8', fontSize: '16px', color: "red", position: "absolute", top: '110%'}}>
+                        <FontAwesomeIcon icon={faTriangleExclamation}/> {emailError}</div>}
+                <input onBlur={e => blurHandler(e)} onChange={e => emailHandler(e)} value={email} className='input1'
+                       type="text" name="email" id="email" placeholder="Email"/>
             </div>
             <div className="input_pass_div">
                 {(passwordDirtu && passwordError) &&
-                    <div style={{opacity:'0.8' ,fontSize:'16px', color: "red", position: "absolute", top: '110%'}}><FontAwesomeIcon icon={faTriangleExclamation} /> {passwordError}</div>}
-                <input onChange={e => passwordHandler(e)} onBlur={e => blurHandler(e)} className='input2'  type="Password" name="password" id="password" placeholder="Password" />
+                    <div style={{opacity: '0.8', fontSize: '16px', color: "red", position: "absolute", top: '110%'}}>
+                        <FontAwesomeIcon icon={faTriangleExclamation}/> {passwordError}</div>}
+                <input onChange={e => passwordHandler(e)} onBlur={e => blurHandler(e)} className='input2'
+                       type="Password" name="password" id="password" placeholder="Password"/>
             </div>
             <div className="bottom_registr" style={{position: "relative", top: "-30px", padding: "0"}}>
-                <Link to="Recovery_password"  className="register_">Forgot password?</Link>
+                <Link to="Recovery_password" className="register_">Forgot password?</Link>
             </div>
             <div className="conteiner_Log_reg">
                 <div className="buttom_div">
-                    <Link to="" onClick={server} className="button8" >Login</Link>
-                    {link_main?<Navigate to="/"/>:<div/>}
-                    <div className="passwordError" style={{color:'red'}}>{store.messages}</div>
+                    <Link to="" onClick={server} className="button8">Login</Link>
+                    {link_main ? <Navigate to="/"/> : <div/>}
+                    <div className="passwordError" style={{color: 'red'}}>{store.messages}</div>
                 </div>
                 <div className="bottom_registr">
                     <span>Don’t have an account? </span>
-                    <Link to="Sign_up"  className="register_">Sign Up</Link>
+                    <Link to="Sign_up" className="register_">Sign Up</Link>
                 </div>
             </div>
         </div>
