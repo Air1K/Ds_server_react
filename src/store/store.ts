@@ -16,6 +16,7 @@ export default class Store {
         makeAutoObservable(this);
     }
 
+
     setAuth(bool: boolean) {
         this.isAuth = bool;
     }
@@ -47,9 +48,9 @@ export default class Store {
         }
     }
 
-    async registration(name: string, email: string, username: string, password: string) {
+    async registration(name: string, email: string, username: string, password: string, code: string) {
         try {
-            const response = await AuthService.registration(name, email, username, password);
+            const response = await AuthService.registration(name, email, username, password, code);
             console.log(response);
             localStorage.setItem('token', response.data.accessToken);
             this.setAuth(true);

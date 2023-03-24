@@ -20,6 +20,7 @@ const SignIn = () => {
     const [username, setUsername] = useState(``);
     const [password, setPassword] = useState(``);
     const [repeat_password, setRepeat_password] = useState(``);
+    const [code, setCode] = useState('');
 
     const [nameDirtu, setNameDirtu] = useState(false)
     const [emailDirtu, setEmailDirtu] = useState(false)
@@ -27,11 +28,13 @@ const SignIn = () => {
     const [passwordDirtu, setPasswordDirtu] = useState(false)
     const [repeat_passwordDirtu, setRepeat_passwordDirtu] = useState(false)
 
+
     const [nameError, setNameError] = useState('имя не может быть пустым');
     const [emailError, setEmailError] = useState('email не может быть пустым');
     const [usernameError, setUsernameError] = useState('username не может быть пустым')
     const [passwordError, setPasswordError] = useState('пароль не может быть пустым')
     const [repeat_passwordError, setRepeat_passwordError] = useState('пароль не может быть пустым')
+
 
     const nameHandler = (e) => {
         setName(e.target.value);
@@ -122,15 +125,22 @@ const SignIn = () => {
     }
 
      async function server(){
-        // console.log((nameError || emailError || usernameError || passwordError || repeat_passwordError));
-        // console.log(nameError, emailError, usernameError, passwordError, repeat_passwordError);
+        console.log("setver_START")
+         console.log(code);
+         console.log(nameError, emailError, usernameError, passwordError, repeat_passwordError, confirmation_bool)
+        if(!(nameError || emailError || usernameError || passwordError || repeat_passwordError )|| confirmation_bool){
+            if(confirmation_bool){
+                await store.registration(name, email, username, password, code);
+                console.log("asdad")
+                await setLink_main(store.isAuth);
+            }else{
+                await store.confirmationCode(email, true);
+                setConfirmation_bool(true)
+            }
+        }
 
-         setConfirmation_bool(true)
-        // if(!(nameError || emailError || usernameError || passwordError || repeat_passwordError)){
-        //
-        //     await store.registration(name, email, username, password);
-        //      await setLink_main(store.isAuth);
-        // }
+
+
 
     }
 
@@ -187,7 +197,7 @@ const SignIn = () => {
 
                            name="repeat_password" id="repeat_password" placeholder="Repeat Password"/>
                 </div>
-                {confirmation_bool ? <Confirmation />:<div/>}
+                {confirmation_bool ? <Confirmation email = {email} setCode = {setCode}/>:<div/>}
 
                 <div className="conteiner_Log_reg">
                     <div className="buttom_div">
